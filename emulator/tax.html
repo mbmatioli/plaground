@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tax Emulator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900|Montserrat:400,900|Open+Sans&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+
+
+</head>
+
+
+<body>
+
+    <nav>
+        <h1><i class="fas fa-microscope"></i><br>playground</h1>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+            <li><a href="tax.html"><i class="fas fa-coins"></i></a></li>
+            <li><a href="team.html"><i class="fas fa-users"></i></a></li>
+            <li><a href="contracts.html"><i class="fas fa-file-signature"></i></a></li>
+        </ul>
+        <div id="myLinks">
+                <a href="index.html">Home</a>
+                <a href="tax.html">Tax</a>
+                <a href="team.html">Team</a>
+                <a href="contracts.html">Contracts</a>
+
+              </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fas fa-bars"></i>
+        </a>
+    </nav>
+
+    <section class="side-cases">
+
+        <div class="cases">
+            <h3>CASE 1</h3>
+            <p>Prices Include Tax:<span>Yes</span></p>
+            <p>Invoice Include Tax: <span>Yes</span></p>
+            <p>Displayed Prices Include Tax: <span>Yes</span></p>
+            <button class="btn" onclick="caseClickTax()">View</button>
+        </div>
+
+        <div class="cases">
+            <h3>CASE 2</h3>
+            <p>Prices Include Tax:<span>No</span></p>
+            <p>Invoice Include Tax: <span>Yes</span></p>
+            <p>Displayed Prices Include Tax: <span>Yes</span></p>
+            <button class="btn" onclick="caseClickTwoTax()">View</button>
+        </div>
+
+
+    </section>
+    <section class="emulator">
+        <form class="tax">
+            <h2 class="emulator-title">Emulator</h2>
+
+            <div class="top-tax">
+
+                <div class="top-form-tax">
+
+
+                    <label class="number">
+                        <p class="paying-title">Price</p>
+
+                        <input class="field" id="plan-price" type="number" placeholder="250.00"
+                            onchange="billingFunction()">
+                    </label>
+                </div>
+
+
+                <p class="default">Default tax rate</p>
+
+                <div class="top-form-tax">
+
+                    <label class="number">
+                        <input class="field" id="tax-rate" type="number" placeholder="21.00" onchange="billingFunction()">
+                        <h2 class="paying-title">%</h2>
+
+                    </label>
+                </div>
+                <div class="menu">
+
+
+                    <h2 class="emulator-title">Invoincing and Tax</h2>
+
+
+                    <div class="alert" role="alert">
+                        PLEASE NOTE: Without "enabling combine" all only the benefits given
+                        to the paying member will be shared. </div>
+
+                    <div class="all-sliders-tax">
+                        <div class="slider-description">
+                            <div class="description-info">
+                                <p>Add tax to invoice
+                                    <div class="tooltip">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span class="tooltiptext">This option when enabled pools all benefits given
+                                            across all
+                                            plans
+                                            in this team.</span>
+                                    </div>
+                                </p>
+                            </div>
+
+                            <label class="switch">
+                                <input type="checkbox" id="invoice-tax" onclick="billingFunction()">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+
+                        <div class="slider-description">
+                            <div class="description-info">
+                                <p>Prices typed in the back-end include Tax <span>
+                                        <div class="tooltip">
+                                            <i class="fas fa-info-circle"></i>
+                                            <span class="tooltiptext">This option when enabled pools all benefits given
+                                                across all
+                                                plans
+                                                in this team.</span>
+                                        </div>
+                                    </span></p>
+                            </div>
+
+                            <label class="switch">
+                                <input type="checkbox" id="back-end" onclick="billingFunction()">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+
+
+                        <div class="slider-description">
+                            <div class="description-info">
+                                <p>Sets if prices are displayed with tax in your website <span>
+                                        <div class="tooltip">
+                                            <i class="fas fa-info-circle"></i>
+                                            <span class="tooltiptext">This option when enabled pools all benefits given
+                                                across all
+                                                plans
+                                                in this team.</span>
+                                        </div>
+                                    </span></p>
+                            </div>
+
+                            <label class="switch">
+                                <input type="checkbox" id="display-tax" onclick="billingFunction()">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="output">
+
+
+                <div class="invoice">
+                    <h3 class="outcome-title">Invoice</h3>
+                    <div class="box"><i class="fas fa-file-invoice-dollar"></i><span id="invoice-output">$250.00</span>
+                    </div>
+                </div>
+                <div class="website">
+                    <h3 class="outcome-title">Website</h3>
+                    <div class="box"><i class="fas fa-desktop"></i><span id="website-output">$250.00</span></div>
+
+                </div>
+            </div>
+
+        </form>
+    </section>
+</body>
+
+</html>

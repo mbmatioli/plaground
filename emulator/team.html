@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Team Emulator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900|Montserrat:400,900|Open+Sans&display=swap"
+        rel="stylesheet">
+    <script src="index.js"></script>
+
+</head>
+
+<body>
+        <nav>
+                <h1><i class="fas fa-microscope"></i><br>playground</h1>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+                    <li><a href="tax.html"><i class="fas fa-coins"></i></a></li>
+                    <li><a href="team.html"><i class="fas fa-users"></i></a></li>
+                    <li><a href="contracts.html"><i class="fas fa-file-signature"></i></a></li>
+                </ul>
+                <div id="myLinks">
+                        <a href="index.html">Home</a>
+                        <a href="tax.html">Tax</a>
+                        <a href="team.html">Team</a>
+                        <a href="contracts.html">Contracts</a>
+        
+                      </div>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                        <i class="fas fa-bars"></i>
+                </a>
+            </nav>
+
+
+    <section class="side-cases">
+
+        <div class="cases">
+            <h3>CASE 1</h3>
+            <p>Paying Member: <span>John Doe</span></p>
+            <p>Single Invoice: <span>Paying member only</span></p>
+            <p>Benefits: <span>Pooled and shared with everyone</span></p>
+            <button class="btn" onclick="caseClick()">View</button>
+        </div>
+
+        <div class="cases">
+            <h3>CASE 2</h3>
+            <p>Paying Member: <span>John Doe</span></p>
+            <p>Single Invoice: <span>Paying Member Only</span></p>
+            <p>Benefits: <span>Only Benefits given to PM are shared with everyone</span></p>
+            <button class="btn" onclick="caseClickTwo()">View</button>
+        </div>
+
+        <div class="cases">
+            <h3>CASE 3</h3>
+            <p>Paying Member: <span>John Doe</span></p>
+            <p>Single Invoice: <span>Individual invoices</span></p>
+            <p>Benefits: <span>Pooled and shared with everyone</span></p>
+            <button class="btn" onclick="caseClickThree()">View</button>
+        </div>
+
+
+    </section>
+
+    <section class="emulator">
+
+        <form>
+            <h2 class="emulator-title">Emulator</h2>
+
+            <div class="top-one">
+                <div class="top-form">
+                    <label class="customer"></label>
+                    <span class="paying-title"> <i class="fas fa-user"></i>Paying Member (PM)</span>
+                    <select class="field" idname="paying-member" id="paying-member" onchange="allTogether()">
+                        <option class="option" value="" disabled selected>Select your option</option>
+                        <option class="option" value="member">John Doe - Private Office Membership (Member)</option>
+                        <option class="option" value="contact">Jane Royal - No Plan (Contact) NOT RECOMMENDED
+                        </option>
+                    </select>
+                    </label>
+                </div>
+                <div class="merge">
+                    <P>Merge Invoice <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">This option will combine all charges for the team under one invoice
+                            for
+                            the person outlined above.</span></div></P>
+                            <label class="switch">
+                                    <input type="checkbox" id="merge-invoice" onclick="teamBilling()">
+                                    <span class="slider round"></span>
+                                </label>
+                        </div>
+                   
+                            </div>
+
+            <div class="menu">
+                <h2>Credit Sharing</h2>
+                <div class="alert alert-warning" role="alert">
+                    PLEASE NOTE: Without "enabling combine" all only the benefits given
+                    to the paying member will be shared. </div>
+                <div class="all-sliders">
+                    <div class="slider-description">
+                        <div class="description-info">
+                            <p>Combine all credits <span>
+                                    <div class="tooltip">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span class="tooltiptext">This option when enabled pools all benefits given
+                                            across all
+                                            plans
+                                            in this team.</span>
+                                    </div>
+                                </span></p>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" id="combine-credit" onclick="allTogether()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+
+
+                    <div class="slider-description">
+                        <div class="description-info">
+
+                            <P>Share access passes <span>
+                                    <div class="tooltip">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span class="tooltiptext">Share access passes with all team members.</span>
+                                    </div>
+                                </span></P>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="access-pass" onclick="allTogether()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="slider-description">
+                        <div class="description-info">
+
+                            <P>Share time/printing credit <span>
+                                    <div class="tooltip">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span class="tooltiptext">Share time and printing
+                                        </span></div>
+                                </span></P>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="time-credit" onclick="allTogether()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="slider-description">
+                        <div class="description-info">
+
+                            <P>Share monetary credit <span>
+                                    <div class="tooltip">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span class="tooltiptext">For bookings and events only. Share monetary
+                                            credit with all
+                                            team members. </span></div>
+                                </span></P>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="monetary-credit" onclick="allTogether()">
+                            <span class="slider round"></span>
+                        </label>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="output">
+
+                <div class="outcome-list">
+                    <h3 class="outcome-title">Benefits</h3>
+                    <ul id="options-breakdown">
+                        <li>Invoice</li>
+                        <li>Combine Benefits</li>
+                        <li>Access Pass</li>
+                        <li>Time and Printing Credit</li>
+                        <li>Monetary Credit</li>
+                    </ul>
+                </div>
+
+                <div class="each-member">
+                    <h3 class="outcome-title">Individual</h3>
+                    <ul id="individual">
+                        <li id="individual-one">INDIVIDUAL INVOICES <i class='fas fa-file-invoice-dollar'></i></li>
+                        <li id="individual-two"></li>
+                        <li id="individual-three"></li>
+                        <li id="individual-four"></li>
+                        <li id="individual-five"></li>
+                    </ul>
+                </div>
+
+                <div class="shared-with">
+                    <h3 class="outcome-title">Everyone</h3>
+                    <ul id="everyone">
+                        <li id="everyone-one"></li>
+                        <li id="everyone-two"></li>
+                        <li id="everyone-three"></li>
+                        <li id="everyone-four"></li>
+                        <li id="everyone-five"></li>
+                    </ul>
+                </div>
+        </form>
+    </section>
+
+
+</body>
+
+</html>

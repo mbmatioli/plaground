@@ -53,6 +53,7 @@ function caseClick() {
     }
 
     allTogether()
+    scrollWin()
 }
 
 function caseClickTwo() {
@@ -65,6 +66,7 @@ function caseClickTwo() {
     document.querySelector("#time-credit").checked = true;
     document.querySelector("#monetary-credit").checked = true;
     allTogether()
+    scrollWin() 
 }
 
 function caseClickThree() {
@@ -77,6 +79,7 @@ function caseClickThree() {
     document.querySelector("#time-credit").checked = true;
     document.querySelector("#monetary-credit").checked = true;
     allTogether()
+    scrollWin()
 }
 
 function teamFunction() {
@@ -254,9 +257,15 @@ function caseClickTax() {
 };
 
 function scrollWin() {
-    // window.scrollTo(0, 500);
-    document.getElementById("invoice-output").scrollIntoView()
-};
+    window.scrollBy({ 
+        top: 2000,
+        left: 0, 
+        behavior: 'smooth' 
+      });
+
+ 
+    };
+    
 
 function caseClickTwoTax() {
 

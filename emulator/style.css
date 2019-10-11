@@ -14,7 +14,9 @@ ul {
 h1 {
   padding: 20px 10px;
   margin: 0 0 75px 0;  
+  font-weight: 300;
 }
+
 
 h1,
 h2,
@@ -22,81 +24,61 @@ h3 {
   font-family: "Lato", sans-serif;
 }
 
-/******************************* NAV  *******************************/
+/******************************* BODY  *******************************/
 
 body {
   position:absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; 
+  display: flex;
+  flex-direction: row;
   background: #f7f7f7;
   }
 
+
+/******************************* NAV  *******************************/
+
 nav {
-  position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
   text-align: center;
   background-color: #212121;
   color: white;
-  padding: 15px 5px;
   height: 100vh;
 }
 
+nav ul {
+  display: flex;
+  flex-direction: column;
+}
+
+nav ul li {
+  margin: 15px 0px;
+  padding: 20px 16px;
+}
 
 nav #myLinks {
   display: none;
 }
+
 nav a {
+  display:block;
   color: white;
   padding: 20px 16px;
   text-decoration: none;
-  font-size: 17px;
-  display: block;
 }
 
-
 nav h1 {
-  margin: 0;
   padding: 14px 16px;
   margin: 0 0 100px 0;
 }
 
-nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
 nav .icon {
   display: none;
 }
 
-
-nav ul li {
-  margin: 15px 0px;
-}
-
 nav ul li a i{
-  font-size: 20px;
+  font-size: 25px;
   text-decoration: none;
   color: white;
-  font-family: "Lato", sans-serif;
-  font-weight: 600;
 }
 
 nav ul li a i:hover {
@@ -106,10 +88,9 @@ nav ul li a i:hover {
 /******************************* CASES  *******************************/
 
 .side-cases {
-  margin: 10px 0px 0 145px;
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 30%;
-
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px 0 20px;
 }
 
 .cases {
@@ -131,13 +112,13 @@ nav ul li a i:hover {
 }
 
 .cases p {
-
   text-transform: uppercase;
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 1px;
   margin:8px 0px;
 }
+
 .cases p span{
   text-transform: none;
   color: rgb(126, 126, 126);
@@ -146,65 +127,38 @@ nav ul li a i:hover {
   letter-spacing: normal;
   }
 
-
 .btn {
   margin: 10px 0 0 0;
   border-color: 1px solid #ff9c00;
-  /* border-radius:95% 4% 92% 5%/4% 95% 6% 95%; */
   border-radius: 5px;
   background-color: #ff9c00;
   border: none;
   padding: 10px 24px;
-  font-weight: bold;
   font-family: "open sans";
   color: white;
 }
 
 .btn:hover {
   border-color: 1px solid #ff9c00;
-  /* border-width: 3px 4px 3px 5px;
-  border-radius:95% 4% 92% 5%/4% 95% 6% 95%; */
   background-color: #ffb949;
-
-}
-/******************************* BODY  *******************************/
-
-
-.body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  color: white;
 }
 
 /******************************* EMULATOR  *******************************/
 
-
 form {
   background-color:white;
-  color: black;
-  border-radius: 5  px;
+  border-radius: 5px;
   border: 1px solid #cecece; 
   color: rgb(75, 75, 75);
   margin: 20px 0 0 10px;
-  -ms-flex-preferred-size: 100%;
-      flex-basis:100%;
-  border-radius: 5px;
 }
 
-.emulator {
-  -ms-flex-preferred-size: 70%;
-      flex-basis: 70%;
-}
 h2 {
   padding: 10px 0;
   font-size: 18px;
   text-transform: uppercase;
 }
+
 .emulator-title {
   margin: 10px 0 0 30px;
 }
@@ -219,12 +173,9 @@ h2 {
 .paying-title i {
   font-size: 15px;
   margin-right: 7px;
-
 }
 
 .top-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   border: 1px solid #cecece; 
   border-radius: 5px;

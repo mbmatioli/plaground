@@ -348,3 +348,14 @@ function taxAlert() {
         document.getElementById("alert").style.display = "none"
     }
 }
+
+
+function fixRate() {
+    var fixPrice = document.getElementById("fix-price");
+
+    if (fixPrice.checked === true) {
+        document.getElementById("price").style.display = "flex"
+    } else {
+        document.getElementById("price").style.display = "none"
+    }
+}

@@ -4,37 +4,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Emulator</title>
+    <meta name="theme-color" content="#ffffff">
+    <title>Playground | Team Emulator</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,900|Montserrat:400,900|Open+Sans&display=swap"
         rel="stylesheet">
     <script src="index.js"></script>
 
+
 </head>
 
 <body>
-        <nav>
-                <h1><i class="fas fa-microscope"></i><br>playground</h1>
-                <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i></a></li>
-                    <li><a href="tax.html"><i class="fas fa-coins"></i></a></li>
-                    <li><a href="team.html"><i class="fas fa-users"></i></a></li>
-                    <li><a href="contracts.html"><i class="fas fa-file-signature"></i></a></li>
-                </ul>
-                <div id="myLinks">
-                        <a href="index.html">Home</a>
-                        <a href="tax.html">Tax</a>
-                        <a href="team.html">Team</a>
-                        <a href="contracts.html">Contracts</a>
-        
-                      </div>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                        <i class="fas fa-bars"></i>
-                </a>
-            </nav>
 
- 
+    <nav>
+        <h1><i class="fas fa-microscope"></i><br>playground</h1>
+
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+            <li><a href="tax.html"><i class="fas fa-coins"></i></a></li>
+            <li><a href="team.html"><i class="fas fa-users"></i></a></li>
+            <li><a href="contracts.html"><i class="fas fa-file-signature"></i></a></li>
+        </ul>
+
+        <div id="myLinks">
+            <a href="index.html">Home</a>
+            <a href="tax.html">Tax</a>
+            <a href="team.html">Team</a>
+            <a href="contracts.html">Contracts</a>
+        </div>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fas fa-bars"></i>
+        </a>
+    </nav>
+
+
+    <section class="side-cases">
+
+        <div class="cases">
+            <h3>CASE 1</h3>
+            <p>Paying Member: <span>John Doe</span></p>
+            <p>Single Invoice: <span>Paying member only</span></p>
+            <p>Benefits: <span>Pooled and shared with everyone</span></p>
+            <button class="btn" onclick="caseClick()">View</button>
+        </div>
+
+        <div class="cases">
+            <h3>CASE 2</h3>
+            <p>Paying Member: <span>John Doe</span></p>
+            <p>Single Invoice: <span>Paying Member Only</span></p>
+            <p>Benefits: <span>Only Benefits given to PM are shared with everyone</span></p>
+            <button class="btn" onclick="caseClickTwo()">View</button>
+        </div>
+
+        <div class="cases">
+            <h3>CASE 3</h3>
+            <p>Paying Member: <span>John Doe</span></p>
+            <p>Single Invoice: <span>Individual invoices</span></p>
+            <p>Benefits: <span>Pooled and shared with everyone</span></p>
+            <button class="btn" onclick="caseClickThree()">View</button>
+        </div>
+    </section>
+
+    <section class="emulator">
+
+        <form>
+            <h2 class="emulator-title">Emulator</h2>
+
+            <div class="customer-form">
+                <label class="customer"></label>
+                <span class="paying-title"><i class="fas fa-user"></i>Customer</span>
+                <select class="field" idname="customer" id="cusotmer" onchange="allTogether()">
+                    <option class="option" value="" disabled selected>Select customer</option>
+                    <option class="option" value="member">Abigail Winterberry</option>
+                    <option class="option" value="contact">Jimminy Billy Bob</option>
+                </select>
+                </label>
+            </div>
+            <div class="customer-form">
+                <label class="customer"></label>
+                <span class="paying-title"><i class="fas fa-award"></i>Plan</span>
+                <select class="field" idname="paying-member" id="plan" onchange="allTogether()">
+                    <option class="option" value="" disabled selected>Select plan</option>
+                    <option class="option" value="member">Hot Desk Membership - $250</option>
+                    <option class="option" value="contact">Dedicated Desk Membership - $400</option>
+                    <option class="option" value="contact">Private Office Membership - $600</option>
+                </select>
+                </label>
+            </div>
+
+            <h2 class="emulator-title">Invoice period</h2>
+            <div class="alert" id="alert" role="alert">
+                    PLEASE NOTE: Without "enabling combine" all only the benefits given
+                    to the paying member will be shared. </div>
+            <div class="invoice-period">
+
+                <div class="plan-date">
+                    <label class="date">
+                            <p class="paying-title">Start Date</p>
+                        <input class="field-date" id="start-date" type="date">
+                    </label>
+                </div>
+
+                <div class="plan-date">
+                        <label class="date">
+                            <input class="field-date" id="billing-day" type="number" placeholder="1">
+                            <p class="paying-title">st of every month</p>
+                        </label>
+                </div>
+
+                <div class="plan-date">
+                    <label class="date">
+                        <p class="paying-title">Invoice Date</p>
+                        <input class="field-date" id="start-date" type="date" >
+                    </label>
+                </div>
+
+                <div class="plan-date">
+                    <label class="date">
+                        <p class="paying-title">Invoice Period</p>
+                        <input class="field-date" id="invoice-period" type="date" placeholder="dd/mm/yyy"
+                            onchange="billingFunction()">
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="menu">
+                <h2>Price</h2>
+              
+                <div class="all-contract-sliders">
+                        <div class="contract-slider">
+                                <div class="contract-switch">
+                            <p>Fix the price of this contract<span>
+                                    <div class="tooltip">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span class="tooltiptext">This option when enabled pools all benefits given
+                                            across all
+                                            plans
+                                            in this team.</span>
+                                    </div>
+                                </span></p>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" id="fix-price" onclick="fixRate()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+
+                    <div id="price">
+                    <div class="fix-rate">
+                            
+
+
+                                    <label class="number">
+                                        <p class="paying-title">Price</p>
+                
+                                        <input class="field" id="plan-price" type="number" placeholder="250.00"
+                                            onchange="billingFunction()">
+                                    </label>
+                    </div>
+
+                    <div class="fix-rate">
+                            <label class="date">
+                                <input class="field-date" id="billing-day" type="number" placeholder="1">
+                                <p class="paying-title">Qty</p>
+                            </label>
+                    </div>
+                   </div>
+
+                    <div class="contract-slider">
+                        <div class="contract-switch">
+
+                            <P>Adjust the next invoice based on the number of days left between the renewal date and the next billing day (prorate).<span>
+                                    <div class="tooltip">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span class="tooltiptext">Share access passes with all team members.</span>
+                                    </div>
+                                </span></P>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="access-pass" onclick="allTogether()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="contract-slider">
+                            <div class="contract-switch">
+
+                            <P>Invoice additional cycles in the next invoice for this contract.<span>
+                                    <div class="tooltip">
+                                        <i class="fas fa-info-circle"></i>
+                                        <span class="tooltiptext">Share time and printing credit with all team members.
+                                        </span></div>
+                                </span></P>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="time-credit" onclick="allTogether()">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+              
+                </div>
+            </div>
+
+            <div class="output" id="output">
+
+                <div class="outcome-list">
+                    <h3 class="outcome-title">Benefits</h3>
+                    <ul id="options-breakdown">
+                        <li>Invoice</li>
+                        <li>Combine Benefits</li>
+                        <li>Access Pass</li>
+                        <li>Time and Printing Credit</li>
+                        <li>Monetary Credit</li>
+                    </ul>
+                </div>
+
+                <div class="each-member">
+                    <h3 class="outcome-title">Individual</h3>
+                    <ul id="individual">
+                        <li id="individual-one">INDIVIDUAL INVOICES <i class='fas fa-file-invoice-dollar'></i></li>
+                        <li id="individual-two"></li>
+                        <li id="individual-three"></li>
+                        <li id="individual-four"></li>
+                        <li id="individual-five"></li>
+                    </ul>
+                </div>
+
+                <div class="shared-with">
+                    <h3 class="outcome-title">Everyone</h3>
+                    <ul id="everyone">
+                        <li id="everyone-one"></li>
+                        <li id="everyone-two"></li>
+                        <li id="everyone-three"></li>
+                        <li id="everyone-four"></li>
+                        <li id="everyone-five"></li>
+                    </ul>
+                </div>
+        </form>
+    </section>
 
 
 </body>

@@ -23,21 +23,23 @@
 
     <nav>
         <h1><i class="fas fa-microscope"></i><br>playground</h1>
+
         <ul>
             <li><a href="index.html"><i class="fas fa-home"></i></a></li>
             <li><a href="tax.html"><i class="fas fa-coins"></i></a></li>
             <li><a href="team.html"><i class="fas fa-users"></i></a></li>
             <li><a href="contracts.html"><i class="fas fa-file-signature"></i></a></li>
         </ul>
-        <div id="myLinks">
-                <a href="index.html">Home</a>
-                <a href="tax.html">Tax</a>
-                <a href="team.html">Team</a>
-                <a href="contracts.html">Contracts</a>
 
-              </div>
+        <div id="myLinks">
+            <a href="index.html">Home</a>
+            <a href="tax.html">Tax</a>
+            <a href="team.html">Team</a>
+            <a href="contracts.html">Contracts</a>
+        </div>
+
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fas fa-bars"></i>
+            <i class="fas fa-bars"></i>
         </a>
     </nav>
 
@@ -58,11 +60,11 @@
             <p>Displayed Prices Include Tax: <span>Yes</span></p>
             <button class="btn" onclick="caseClickTwoTax()">View</button>
         </div>
-
-
     </section>
+
     <section class="emulator">
-        <form class="tax">
+
+        <form>
             <h2 class="emulator-title">Emulator</h2>
 
             <div class="top-tax">
@@ -84,7 +86,8 @@
                 <div class="top-form-tax">
 
                     <label class="number">
-                        <input class="field" id="tax-rate" type="number" placeholder="21.00" onchange="billingFunction()">
+                        <input class="field" id="tax-rate" type="number" placeholder="21.00"
+                            onchange="billingFunction()">
                         <h2 class="paying-title">%</h2>
 
                     </label>
@@ -96,7 +99,7 @@
 
 
                     <div class="alert" id="alert" role="alert">
-                      </div>
+                    </div>
 
                     <div class="all-sliders-tax">
                         <div class="slider-description">
@@ -104,7 +107,8 @@
                                 <p>Add tax to invoice
                                     <div class="tooltip">
                                         <i class="fas fa-info-circle"></i>
-                                        <span class="tooltiptext">Invoices will include tax, so long as a tax rate has been defined.</span>
+                                        <span class="tooltiptext">Invoices will include tax, so long as a tax rate has
+                                            been defined.</span>
                                     </div>
                                 </p>
                             </div>
@@ -120,7 +124,8 @@
                                 <p>Prices typed in the back-end include Tax <span>
                                         <div class="tooltip">
                                             <i class="fas fa-info-circle"></i>
-                                            <span class="tooltiptext">Enabling this option will mean prices typed in the admin panel are gross prices.</span>
+                                            <span class="tooltiptext">Enabling this option will mean prices typed in the
+                                                admin panel are gross prices.</span>
                                         </div>
                                     </span></p>
                             </div>
@@ -137,7 +142,8 @@
                                 <p>Sets if prices are displayed with tax in your website <span>
                                         <div class="tooltip">
                                             <i class="fas fa-info-circle"></i>
-                                            <span class="tooltiptext">>Enabling this option will mean prices typed in the members portal are gross prices.</span>
+                                            <span class="tooltiptext">>Enabling this option will mean prices typed in
+                                                the members portal are gross prices.</span>
                                         </div>
                                     </span></p>
                             </div>

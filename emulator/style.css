@@ -68,6 +68,10 @@ nav h1 {
   margin: 0 0 100px 0;
 }
 
+h1 i {
+  font-size: 40px;
+}
+
 nav .icon {
   display: none;
 }
@@ -88,6 +92,7 @@ nav ul li a i:hover {
   display: flex;
   flex-direction: column;
   margin: 10px 0px 0 10px;
+  flex-basis: 20%;
 }
 
 .cases {
@@ -253,7 +258,7 @@ select {
 
 .tooltip i {
   display: inline-block;
-  font-size: 15   px;
+  font-size: 15px;
 }
 
 /******************************* TOOLTIPS  *******************************/
@@ -391,7 +396,7 @@ input:checked+.slider:before {
 
 i {
   align-self: center;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .outcome-title {
@@ -606,9 +611,11 @@ input[type="date"] {
   background:  95% 30% / contain no-repeat url('imgs/iconfinder_calendar-o_1608598.svg');
   color:grey;
 }
+
 input[type="date"]::-webkit-inner-spin-button {
   display: none;
 }
+
 [type="date"]::-webkit-calendar-picker-indicator {
   opacity: 0;
 }
@@ -797,6 +804,10 @@ input {
   
   .plan-date {
     width: 300px;
+  }
+
+  input[type="date"] {
+    width: 200px;
   }
   /******************************* MOBILE SLIDERS *******************************/
 

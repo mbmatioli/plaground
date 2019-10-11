@@ -25,6 +25,7 @@ h3 {
 /******************************* NAV  *******************************/
 
 body {
+  position:absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; 
@@ -273,6 +274,7 @@ select {
 }
 
 .alert {
+  display:none;
   margin: 0 0 15px 0;
   padding: 20px;
   color: rgb(198, 179, 0);
@@ -602,7 +604,6 @@ i {
 #tax-rate {
   width: 50px;
   margin: 0;
-
   border: none;
   padding: auto;
   border-radius: 4px 0 0 4px; 
@@ -616,13 +617,13 @@ i {
 
 
 .field {
-
+  padding: 8px;
   text-align: center;
   font-weight: bold;
   vertical-align: middle;
 }
 .field:hover {
-  background: rgb(231, 231, 231);
+  background: rgba(251, 251, 251, 0.855);
 
 }
 
@@ -749,6 +750,9 @@ input[type="number"] {
 
 
 /******************************* MEDIA QUERY  *******************************/
+
+
+
 
 @media screen and (max-width: 600px) {
   html {

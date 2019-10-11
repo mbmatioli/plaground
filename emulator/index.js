@@ -359,3 +359,14 @@ function fixRate() {
         document.getElementById("price").style.display = "none"
     }
 }
+
+
+function cancellation() {
+    var cancelDate = document.getElementById("cancel-date");
+
+    if (cancelDate.checked === true) {
+        document.getElementById("cancel").style.display = "flex"
+    } else {
+        document.getElementById("cancel").style.display = "none"
+    }
+}

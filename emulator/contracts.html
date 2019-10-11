@@ -97,28 +97,28 @@
 
             <h2 class="emulator-title">Invoice period</h2>
             <div class="alert" id="alert" role="alert">
-                    PLEASE NOTE: Without "enabling combine" all only the benefits given
-                    to the paying member will be shared. </div>
+                PLEASE NOTE: Without "enabling combine" all only the benefits given
+                to the paying member will be shared. </div>
             <div class="invoice-period">
 
                 <div class="plan-date">
                     <label class="date">
-                            <p class="paying-title">Start Date</p>
+                        <p class="paying-title">Start Date</p>
                         <input class="field-date" id="start-date" type="date">
                     </label>
                 </div>
 
                 <div class="plan-date">
-                        <label class="date">
-                            <input class="field-date" id="billing-day" type="number" placeholder="1">
-                            <p class="paying-title">st of every month</p>
-                        </label>
+                    <label class="date">
+                        <input class="field-date" id="billing-day" type="number" placeholder="1">
+                        <p class="paying-title">st of every month</p>
+                    </label>
                 </div>
 
                 <div class="plan-date">
                     <label class="date">
                         <p class="paying-title">Invoice Date</p>
-                        <input class="field-date" id="start-date" type="date" >
+                        <input class="field-date" id="start-date" type="date">
                     </label>
                 </div>
 
@@ -134,10 +134,10 @@
 
             <div class="menu">
                 <h2>Price</h2>
-              
+
                 <div class="all-contract-sliders">
-                        <div class="contract-slider">
-                                <div class="contract-switch">
+                    <div class="contract-slider">
+                        <div class="contract-switch">
                             <p>Fix the price of this contract<span>
                                     <div class="tooltip">
                                         <i class="fas fa-info-circle"></i>
@@ -156,30 +156,31 @@
                     </div>
 
                     <div id="price">
-                    <div class="fix-rate">
-                            
+                        <div class="fix-rate">
 
 
-                                    <label class="number">
-                                        <p class="paying-title">Price</p>
-                
-                                        <input class="field" id="plan-price" type="number" placeholder="250.00"
-                                            onchange="billingFunction()">
-                                    </label>
-                    </div>
 
-                    <div class="fix-rate">
+                            <label class="number">
+                                <p class="paying-title">Price</p>
+
+                                <input class="field" id="plan-price" type="number" placeholder="250.00"
+                                    onchange="billingFunction()">
+                            </label>
+                        </div>
+
+                        <div class="fix-rate">
                             <label class="date">
                                 <input class="field-date" id="billing-day" type="number" placeholder="1">
                                 <p class="paying-title">Qty</p>
                             </label>
+                        </div>
                     </div>
-                   </div>
 
                     <div class="contract-slider">
                         <div class="contract-switch">
 
-                            <P>Adjust the next invoice based on the number of days left between the renewal date and the next billing day (prorate).<span>
+                            <P>Adjust the next invoice based on the number of days left between the renewal date and the
+                                next billing day (prorate).<span>
                                     <div class="tooltip">
                                         <i class="fas fa-info-circle"></i>
                                         <span class="tooltiptext">Share access passes with all team members.</span>
@@ -192,7 +193,7 @@
                         </label>
                     </div>
                     <div class="contract-slider">
-                            <div class="contract-switch">
+                        <div class="contract-switch">
 
                             <P>Invoice additional cycles in the next invoice for this contract.<span>
                                     <div class="tooltip">
@@ -206,44 +207,87 @@
                             <span class="slider round"></span>
                         </label>
                     </div>
-              
+
+                    
                 </div>
             </div>
+            <div class="cancellation">
+                    <h2>Cancellation</h2>
+    
+                    <div class="all-contract-sliders">
+            
+    
+                        <div class="contract-slider">
+                            <div class="contract-switch">
+    
+                                <P>Adjust the next invoice based on the number of days left between the renewal date and the
+                                    next billing day (prorate).<span>
+                                        <div class="tooltip">
+                                            <i class="fas fa-info-circle"></i>
+                                            <span class="tooltiptext">Share access passes with all team members.</span>
+                                        </div>
+                                    </span></P>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="access-pass" onclick="allTogether()">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="contract-slider">
+                            <div class="contract-switch">
+    
+                                <P>Invoice additional cycles in the next invoice for this contract.<span>
+                                        <div class="tooltip">
+                                            <i class="fas fa-info-circle"></i>
+                                            <span class="tooltiptext">Share time and printing credit with all team members.
+                                            </span></div>
+                                    </span></P>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="time-credit" onclick="allTogether()">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <div class="contract-slider">
+                                <div class="contract-switch">
+                                    <p>Schedule cancellation date<span>
+                                            <div class="tooltip">
+                                                <i class="fas fa-info-circle"></i>
+                                                <span class="tooltiptext">This option when enabled pools all benefits given
+                                                    across all
+                                                    plans
+                                                    in this team.</span>
+                                            </div>
+                                        </span></p>
+                                </div>
+        
+                                <label class="switch">
+                                    <input type="checkbox" id="cancel-date" onclick="cancellation()">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+        
+                            <div id="cancel">
+                                <div class="fix-rate">
+        
+                              
+                                        <div class="plan-date">
+                                                <label class="date">
+                                                    <p class="paying-title">Cancellation Date</p>
+                                                    <input class="field-date" id="cancellation-date" type="date" placeholder="dd/mm/yyy"
+                                                        onchange="billingFunction()">
+                                                </label>
+                                            </div>
+                                </div>
+                            </div>
+                        
+                    </div>
+                </div>
 
             <div class="output" id="output">
 
-                <div class="outcome-list">
-                    <h3 class="outcome-title">Benefits</h3>
-                    <ul id="options-breakdown">
-                        <li>Invoice</li>
-                        <li>Combine Benefits</li>
-                        <li>Access Pass</li>
-                        <li>Time and Printing Credit</li>
-                        <li>Monetary Credit</li>
-                    </ul>
-                </div>
 
-                <div class="each-member">
-                    <h3 class="outcome-title">Individual</h3>
-                    <ul id="individual">
-                        <li id="individual-one">INDIVIDUAL INVOICES <i class='fas fa-file-invoice-dollar'></i></li>
-                        <li id="individual-two"></li>
-                        <li id="individual-three"></li>
-                        <li id="individual-four"></li>
-                        <li id="individual-five"></li>
-                    </ul>
-                </div>
-
-                <div class="shared-with">
-                    <h3 class="outcome-title">Everyone</h3>
-                    <ul id="everyone">
-                        <li id="everyone-one"></li>
-                        <li id="everyone-two"></li>
-                        <li id="everyone-three"></li>
-                        <li id="everyone-four"></li>
-                        <li id="everyone-five"></li>
-                    </ul>
-                </div>
+            </div>
         </form>
     </section>
 

@@ -369,53 +369,6 @@ select {
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
-/*
-.tooltip {
-  position: relative;
-  display: inline-block;
-  
-
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
-
-  background-color: rgb(121, 121, 121);
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 5px;
-  position: absolute;
-  z-index: 1;
-  top: -5px;
-  left: 110%;
-  -webkit-transform: translateX(5px);
-      -ms-transform: translateX(5px);
-          transform: translateX(5px); 
-  /* transform: translate(0 -10%); */
-
-  /* min-width: 200px;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -60px;
-
-}
-
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 15%;
-  right: 100%;
-  margin-top: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent rgb(121, 121, 121) transparent transparent;
-}
-
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: .8;
-}  */
 
 /******************************* Sliders  *******************************/
 
@@ -560,6 +513,7 @@ i {
 
 .default {
   margin: 10px 0 10px 30px;
+  display: block;
 }
 
 .top-form-tax {
@@ -664,6 +618,7 @@ i {
   text-align: center;
   font-weight: bold;
   vertical-align: middle;
+  background: white;
 }
 .field:hover {
   background: rgba(251, 251, 251, 0.855);
@@ -824,7 +779,7 @@ input[type="number"] {
   display: flex;
   margin: 15px 0 0 0px;  
   width: fit-content;
-  flex-basis: 40%;
+  width: 40%;
 }
 
 .date {
@@ -855,13 +810,14 @@ input[type="number"] {
 [type="date"] {
   background: 90% 30% / contain no-repeat url('imgs/iconfinder_calendar-o_1608598.svg');
 }
-[type="date"]::-webkit-inner-spin-button {
-  display: none;
-}
-[type="date"]::-webkit-calendar-picker-indicator {
+
+[type="date"]::-webkit-calendar-picker-indicator{
   opacity: 0;
 }
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
 
+}
 .date:hover{
   background-color: none;
 }
@@ -901,6 +857,16 @@ flex-direction: column;
   margin: 0;
 }
 
+#cancel {
+  display: none;
+  margin: 0;
+}
+
+.cancellation {
+  margin: 0 0 0 30px;
+}
+
+
 
 /******************************* MEDIA QUERY  *******************************/
 
@@ -908,10 +874,7 @@ flex-direction: column;
 @media screen and (max-width: 600px) {
 
   body {
-    position: absolute;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; 
+
     -webkit-box-orient: vertical; 
     -webkit-box-direction: normal; 
         -ms-flex-direction: column; 
@@ -923,6 +886,7 @@ flex-direction: column;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-direction: row;  
     -webkit-box-orient:horizontal;
     -webkit-box-direction:normal;
         -ms-flex-direction:row;
@@ -932,7 +896,7 @@ flex-direction: column;
     padding: 0 5px;
     height: 100%;
     position: relative;
-    justify-content: space-between;
+    
     
   }
   #myLinks {
@@ -942,7 +906,8 @@ flex-direction: column;
   }
 
 #myLinks a {
-  width: 100vw;  padding: 20px 16px;
+  width: 100vw;  
+  padding: 20px 16px;
   text-decoration: none;
   font-size: 20px;
   font-weight: bold;
@@ -989,7 +954,6 @@ flex-direction: column;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 100%;
   }
 
   .outcome-title {
@@ -1053,8 +1017,6 @@ flex-direction: column;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-        width: 100%;
-
   }
 
   .all-sliders-tax .slider-description {
@@ -1065,7 +1027,7 @@ flex-direction: column;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    width: 400px;
+    width: 100% ;
   }
   .switch {
     margin: 10px 0 0 0;
@@ -1103,7 +1065,7 @@ flex-direction: column;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-            margin:0
+            margin:0;
             padding: 0 15px;
   }
 
@@ -1122,6 +1084,10 @@ flex-direction: column;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+  }
+
+  .btn {
+    width: 100%;
   }
 
  
@@ -1150,6 +1116,9 @@ flex-direction: column;
 
   .tooltip {
     display: none;
+  }
+  .tooltiptext {
+    display:none;
   }
   .tooltip:hover .tooltiptext {
     display: none;

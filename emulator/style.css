@@ -28,6 +28,7 @@ body {
   display: flex;
   flex-direction: row;
   background: #f7f7f7;
+  min-height: 100vh;
 }
 
 
@@ -86,7 +87,8 @@ nav ul li a i:hover {
 .side-cases {
   display: flex;
   flex-direction: column;
-  margin: 10px 0px 0 20px;
+  margin: 10px 0px 0 10px;
+  flex-basis: 20%;
 }
 
 .cases {
@@ -165,6 +167,7 @@ h2 {
   font-size: 14px;
   margin: 0;
   font-weight: bold;
+  background: #e8e8e8;
 }
 
 .paying-title i {
@@ -216,7 +219,7 @@ select {
   display: none;
   margin: 0 0 15px 0;
   padding: 20px;
-  width: 50%;
+  width: auto;
   color: rgb(198, 179, 0);
   background-color: rgb(255, 247, 202);
   border: 1px solid rgb(198, 179, 0);
@@ -492,9 +495,7 @@ i {
   border-radius: 4px 0 0 4px;
 }
 
-.paying-title {
-  background: #e8e8e8;
-}
+
 
 /******************************************* INPUT FIELD *************************************/
 
@@ -578,6 +579,11 @@ input[type="number"] {
   border-radius: 5px;
 }
 
+.cancellation .date {
+  margin: 0 0 15px 0 ;
+
+}
+
 .field {
   padding: 8px;
   text-align: center;
@@ -624,15 +630,15 @@ input {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
-
 }
 
 .contract-switch {
   display: flex;
+  width: fit-content;
 }
 
 .contract-switch i {
-  margin: 0 0 0 30px;
+  margin: 0 0 0 10px;
 }
 
 #price {
@@ -646,7 +652,7 @@ input {
 }
 
 .cancellation {
-  margin: 0 0 0 30px;
+  margin: 0 0 30px 30px;
 }
 
 
@@ -713,6 +719,7 @@ input {
 
   .side-cases {
     margin: 0 15px;
+    flex-basis: 200px;
     }
 
 
@@ -777,11 +784,21 @@ input {
     margin: 15px 10px;
     width: fit-content;
   }
+
   .menu {
     margin: 0 10px;
   }
+
   .cancellation {
     margin: 0 10px;
+  }
+  
+  .top-form-tax {
+    margin-left: 10px;
+  }
+  
+  .plan-date {
+    width: 300px;
   }
   /******************************* MOBILE SLIDERS *******************************/
 

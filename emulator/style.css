@@ -13,7 +13,7 @@ ul {
 
 h1 {
   padding: 20px 10px;
-  margin: 0 0 75px 0;  
+  margin: 0 0 75px 0;
   font-weight: 300;
 }
 
@@ -27,11 +27,11 @@ h3 {
 /******************************* BODY  *******************************/
 
 body {
-  position:absolute;
+  position: absolute;
   display: flex;
   flex-direction: row;
   background: #f7f7f7;
-  }
+}
 
 
 /******************************* NAV  *******************************/
@@ -60,7 +60,7 @@ nav #myLinks {
 }
 
 nav a {
-  display:block;
+  display: block;
   color: white;
   padding: 20px 16px;
   text-decoration: none;
@@ -75,7 +75,7 @@ nav .icon {
   display: none;
 }
 
-nav ul li a i{
+nav ul li a i {
   font-size: 25px;
   text-decoration: none;
   color: white;
@@ -103,7 +103,7 @@ nav ul li a i:hover {
 }
 
 .cases:hover {
-  border-color:#ff9c00;
+  border-color: #ff9c00;
 }
 
 .cases h3 {
@@ -116,16 +116,16 @@ nav ul li a i:hover {
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 1px;
-  margin:8px 0px;
+  margin: 8px 0px;
 }
 
-.cases p span{
+.cases p span {
   text-transform: none;
   color: rgb(126, 126, 126);
   font-weight: normal;
   display: block;
   letter-spacing: normal;
-  }
+}
 
 .btn {
   margin: 10px 0 0 0;
@@ -146,9 +146,9 @@ nav ul li a i:hover {
 /******************************* EMULATOR  *******************************/
 
 form {
-  background-color:white;
+  background-color: white;
   border-radius: 5px;
-  border: 1px solid #cecece; 
+  border: 1px solid #cecece;
   color: rgb(75, 75, 75);
   margin: 20px 0 0 10px;
 }
@@ -175,9 +175,14 @@ h2 {
   margin-right: 7px;
 }
 
+.top-one {
+  display: flex;
+  align-items: center;
+}
+
 .top-form {
   display: flex;
-  border: 1px solid #cecece; 
+  border: 1px solid #cecece;
   border-radius: 5px;
   margin-left: 30px;
 }
@@ -186,30 +191,16 @@ select {
   outline: none;
   color: grey;
   font-size: 14px;
-   border: none;
-   border-radius: 4px;
-}
-
-.top-one {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  border: none;
+  border-radius: 4px;
 }
 
 .merge {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-wrap: wrap;
+  align-items: center;
   font-weight: bold;
-  width: 130px;
+  width: 150px;
   margin: 0 0 0 50px;
 }
 
@@ -217,14 +208,14 @@ select {
   margin-left: 5px;
 }
 
-/******************************* Menu  *******************************/
+/******************************* MENU  *******************************/
 
 .menu {
   margin: 25px;
 }
 
 .alert {
-  display:none;
+  display: none;
   margin: 0 0 15px 0;
   padding: 20px;
   color: rgb(198, 179, 0);
@@ -235,39 +226,22 @@ select {
 }
 
 .all-sliders {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
 
 .slider-description {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-line-pack: justify;
-      align-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 20%;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 25%;
+  margin: 0 10px 0 0;
 }
+
 .description-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   width: 100%;
 }
 
@@ -276,16 +250,17 @@ select {
   font-weight: bold;
 }
 
-.tooltip i{
+.tooltip i {
   display: inline-block;
   font-size: 15px;
 }
-/******************************* Tooltips  *******************************/
+
+/******************************* TOOLTIPS  *******************************/
 
 .tooltip {
   position: relative;
   display: inline-block;
-  font-weight:normal;
+  font-weight: normal;
 }
 
 .tooltip .tooltiptext {
@@ -321,27 +296,22 @@ select {
   visibility: visible;
 }
 
-/******************************* Sliders  *******************************/
+/******************************* SLIDERS  *******************************/
 
 .switch {
   display: inline-block;
   height: 34px;
-  position: relative;
   width: 60px;
-  -webkit-transform: scale(.8);
-      -ms-transform: scale(.8);
-          transform: scale(.8);
+  transform: translate(-5px, 0) scale(.8);
   margin: 0;
   border-radius: 25px;
-  border: 1px solid #cecece; 
+  border: 1px solid #cecece;
 
 }
 
 .switch:hover {
   border-radius: 34px;
-  -webkit-transform: scale(.8);
-      -ms-transform: scale(.8);
-          transform: scale(.8);
+  transform: translate(-5px, 0) scale(.8);
 }
 
 .switch input {
@@ -356,8 +326,6 @@ select {
   position: absolute;
   right: 0;
   top: 0;
-  -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
 }
 
@@ -366,12 +334,10 @@ select {
   bottom: 4px;
   content: "";
   height: 26px;
+  width: 26px;
   left: 4px;
   position: absolute;
-  -webkit-transition: .4s;
-  -o-transition: .4s;
   transition: .4s;
-  width: 26px;
 }
 
 input:checked+.slider {
@@ -379,11 +345,8 @@ input:checked+.slider {
 }
 
 input:checked+.slider:before {
-  -webkit-transform: translateX(26px);
-      -ms-transform: translateX(26px);
-          transform: translateX(26px);
+  transform: translateX(26px);
   background-color: white;
-
 }
 
 .slider.round {
@@ -394,35 +357,28 @@ input:checked+.slider:before {
   border-radius: 50%;
 }
 
-/******************************* OUTCOME  *******************************/
-.output {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
- 
-  background-color: white;
-}
-.output div {
- -ms-flex-preferred-size: 50%;
-     flex-basis: 50%
-}
+/******************************* OUTPUT  *******************************/
 
-.outup ul {
-  padding: 10px 0;
+.output {
+  display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    background-color: white;  
+  }
+
+
+.output div {
+  flex-basis: 50%;
 }
 
 .output li {
-  height: 4em;
-  padding: 3px 35px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  height: 3em;
+  padding: 0 30px;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   font-size: 1.1em;
   font-weight: bold;
 }
@@ -433,10 +389,7 @@ input:checked+.slider:before {
 }
 
 i {
-  /* margin: 0 auto; */
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
   font-size: 40px;
 }
 
@@ -446,21 +399,45 @@ i {
   text-transform: uppercase;
   background-color: #ff9c00;
   color: white;
-
-}
-
-.individual,
-.everyone {
-  background-color: white;
 }
 
 .shared-with ul li i {
   margin: 0 auto;
 }
-/******************************************* TAX PAGE *************************************/
-.tax {
-  border: 1px solid #cecece;
+
+/******************************************* TAX OUTCOME *************************************/
+
+.invoice,
+.website {
+  width: 50%;
 }
+
+.title {
+  background: rgba(255, 149, 0, 1);
+  padding: 10px;
+  margin: 0;
+}
+
+.box {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 100px;
+  height: 100px;
+  border-radius: 5px;
+}
+
+.box i {
+  margin: 0 10px;
+}
+
+.box span {
+ font-size: 26px;
+ font-weight: bold;  
+}
+
+/******************************************* TAX PAGE *************************************/
 
 .default {
   margin: 10px 0 10px 30px;
@@ -468,85 +445,44 @@ i {
 }
 
 .top-form-tax {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   border-radius: 5px;
   margin-left: 30px;
 }
 
-.top-form-tax p {
-  display: block;
- font-weight:bold;
-}
-.top-tax div.menu{
-  margin: 0 25px 25px 25px;
-}
-.menu .emulator-title{
+.menu .emulator-title {
   margin: 0;
 }
 
 .number {
-  display:-webkit-box;
-  display:-ms-flexbox;
-  display:flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-    border: 1px solid #cecece;
-    border-radius: 4px; 
-    margin: 0 0 15px 0;
-
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #cecece;
+  border-radius: 4px;
+  margin: 0 0 15px 0;
 }
 
 .all-sliders-tax {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
+
 .all-sliders-tax .slider-description {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap:wrap;
-      flex-wrap:wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-line-pack: justify;
-      align-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
   width: 250px;
-}
-.unit {
-  display: inline-block;
-  font-weight: bold;
-  height: 20px;
-  border-radius: 4px; 
 }
 
 #plan-price {
   width: 75px;
   margin: 0;
   border: none;
-
   padding: auto;
-  border-radius: 0 4px 4px 0 ;
-
+  border-radius: 0 4px 4px 0;
 }
 
 #tax-rate {
@@ -554,15 +490,14 @@ i {
   margin: 0;
   border: none;
   padding: auto;
-  border-radius: 4px 0 0 4px; 
-
-  
+  border-radius: 4px 0 0 4px;
 }
+
 .paying-title {
   background: #e8e8e8;
-
 }
 
+/******************************************* INPUT FIELD *************************************/
 
 .field {
   padding: 8px;
@@ -571,70 +506,35 @@ i {
   vertical-align: middle;
   background: white;
 }
+
 .field:hover {
   background: rgba(251, 251, 251, 0.855);
-
 }
 
-.field::-webkit-input-placeholder {
-  color: lightgray;
-  font-weight: bold;
-  
-
-}
-
-.field::-moz-placeholder {
-  color: lightgray;
-  font-weight: bold;
-  
-
-}
-
-.field:-ms-input-placeholder {
-  color: lightgray;
-  font-weight: bold;
-  
-
-}
-
-.field::-ms-input-placeholder {
-  color: lightgray;
-  font-weight: bold;
-  
-
-}
 
 .field::placeholder {
   color: lightgray;
   font-weight: bold;
-  
-
 }
 
 input[type=number],
 textarea {
-  -webkit-transition: all 0.30s ease-in-out;
-  -moz-transition: all 0.30s ease-in-out;
-  -ms-transition: all 0.30s ease-in-out;
-  -o-transition: all 0.30s ease-in-out;
+  transition:all 0.30s ease-in-out;
   outline: none;
-
   border: 1px solid #DDDDDD;
   text-align: center;
 }
 
 input[type=number]:focus,
 textarea:focus {
-  -webkit-box-shadow: 0 0 5px rgb(255, 214, 163);
-          box-shadow: 0 0 5px rgb(255, 214, 163);
+  box-shadow: 0 0 5px rgb(255, 214, 163);
   border: 1px solid rgb(255, 214, 163);
 }
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  margin: 0;
-
+display: none;
 }
 
 input[type="number"] {
@@ -642,82 +542,23 @@ input[type="number"] {
 }
 
 
-
-.output {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  margin: 0;
-  padding: 0;
-  border-radius: 5px;
-}
-
-.invoice, .website {
-  width: 50%;
-  }
-
-.title {
-  background:rgba(255, 149, 0, 1);
-  padding: 10px;
-  margin: 0;
- }
-
-.box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; 
-  -ms-flex-line-pack: center; 
-      align-content: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;  
-  text-align: center;
-  line-height: 100px;
-  background-color: white;
-  height: 100px;
-  border-radius: 5px;
-
-}
-.box i {
-  margin: 0 10px;
-}
-
-.box span {
-  font-size: 26px;
-  font-weight: bold;
-
-}
-
-.grey {
-  color: black;
-
-}
-
 /*******************************  CONTRACT PAGE  *******************************/
 
 .customer-top {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: inline-block;
-
- 
 }
+
 .customer-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  border: 1px solid #cecece; 
+  border: 1px solid #cecece;
   border-radius: 5px;
-  margin: 30px 0 0 30px;  
+  margin: 30px 0 0 30px;
   width: fit-content;
 
 }
 
 .invoice-period {
-  display: flex; 
+  display: flex;
   justify-content: flex-start;
   align-content: flex-end;
   flex-wrap: wrap;
@@ -725,22 +566,21 @@ input[type="number"] {
 }
 
 .plan-date {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  margin: 15px 0 0 0px;  
+  margin: 15px 0 0 0px;
   width: fit-content;
   width: 40%;
 }
 
 .date {
   display: flex;
-  padding:0;
+  padding: 0;
   margin: 0 0 0 30px;
-  width: fit-content;  
-  border: 1px solid #cecece; 
+  width: fit-content;
+  border: 1px solid #cecece;
   border-radius: 5px;
 }
+
 .field {
   padding: 8px;
   text-align: center;
@@ -754,22 +594,25 @@ input[type="number"] {
   margin: 0;
   border: none;
   padding: auto;
-  border-radius: 4px 0 0 4px; 
+  border-radius: 4px 0 0 4px;
 
 }
-/* Date PICKER */
+
+/****************************** DATE PICKER *************************************S*/
 [type="date"] {
   background: 90% 30% / contain no-repeat url('imgs/iconfinder_calendar-o_1608598.svg');
 }
 
-[type="date"]::-webkit-calendar-picker-indicator{
+[type="date"]::-webkit-calendar-picker-indicator {
   opacity: 0;
 }
+
 [type="date"]::-webkit-inner-spin-button {
   display: none;
 
 }
-.date:hover{
+
+.date:hover {
   background-color: none;
 }
 
@@ -778,6 +621,7 @@ input[type="number"] {
 .date label {
   display: block;
 }
+
 .date input {
   border: none;
   border-radius: 5px;
@@ -788,9 +632,11 @@ input[type="number"] {
   color: grey;
 }
 
+/*******************************  CONTRACT SLIDERS  *******************************/
+
 .contract-slider {
   display: flex;
-flex-direction: column;
+  flex-direction: column;
   margin-bottom: 15px;
 
 }
@@ -800,7 +646,7 @@ flex-direction: column;
 }
 
 .contract-switch i {
-  margin: 0 0 0 15px;
+  margin: 0 0 0 30px;
 }
 
 #price {
@@ -825,180 +671,80 @@ flex-direction: column;
 @media screen and (max-width: 600px) {
 
   body {
-
-    -webkit-box-orient: vertical; 
-    -webkit-box-direction: normal; 
-        -ms-flex-direction: column; 
-            flex-direction: column;
-    }
-
-                            /* Responsive Nav */
-  nav {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-direction: row;  
-    -webkit-box-orient:horizontal;
-    -webkit-box-direction:normal;
-        -ms-flex-direction:row;
-            flex-direction:row;
-    -ms-flex-line-pack: center;
-        align-content: center;
-    padding: 0 5px;
-    height: 100%;
-    position: relative;
-    
-    
+    flex-direction: column;
+    margin: 0;
   }
+
+  /******************************* MOBILE NAV   *******************************/
+  nav {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    padding: 0;
+    height: 100%;
+    width: 100vw;
+  }
+
   #myLinks {
     position: absolute;
-    top:0; 
+    top: 0;
     right: 0;
   }
 
-#myLinks a {
-  width: 100vw;  
-  padding: 20px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
-  top: 0;
-  right: 0;
-  color: white;
-     background: #e8e8e8;
-  -webkit-box-shadow: 0 2px 3px lightgrey;
-          box-shadow: 0 2px 3px lightgrey;
-  text-transform: uppercase;
-
-}
+  #myLinks a {
+    position: relative;
+    width: 100vw;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background: #e8e8e8;
+    box-shadow: 0 2px 3px lightgrey;
+    text-transform: uppercase;
+  }
 
   nav h1 {
-    margin:0;
+    margin: 0;
   }
 
   nav ul {
     display: none;
   }
- 
 
-  nav .icon { 
-    color:white;
-    display: block;
+  nav .icon {
     position: absolute;
     right: 0;
-    padding: 17px 17px; 
     top: 0;
-    margin:0;
+    margin: 0;
+    padding: 25px 25px;
+    color: white;
+    display: block;
   }
+
+  /******************************* MOBILE CASES *******************************/
 
   .side-cases {
     margin: 0 15px;
-
   }
+
+
+  /******************************* EMULATOR CASES  *******************************/
+
+  .emulator {
+    margin: 15px;
+    box-shadow: none;
+    outline: 1px solid white;
+  }
+
   form {
     margin: 0 0;
   }
 
-                                    /* BODY */
-  .main-section {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
 
-  .outcome-title {
-    height: 40px;
-    padding: 5px 0;
-     font-size: 15px;
-     border: 0;
-     display: -webkit-box;
-     display: -ms-flexbox;
-     display: flex; 
-     -webkit-box-orient: vertical; 
-     -webkit-box-direction: normal; 
-         -ms-flex-direction: column; 
-             flex-direction: column; 
-     -webkit-box-pack: center; 
-         -ms-flex-pack: center; 
-             justify-content: center;
-  
-  }
-
-  .emulator {
-    margin: 0 15px;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-    outline: 1px solid white;
-
-  }
-
-
-
-  .output li {
-    height: 3em;
-    padding: 3px 10px;
-  }
-
-  .all-sliders {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    width: 100%;
-  }
-
-  .slider-description {
-    display: flex;
-    align-items: flex-start;
-    margin: 0 0 20px 0;
-    width: 100%;
-     
-  }
-
-  .all-sliders-tax {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
-  .all-sliders-tax .slider-description {
-    -webkit-box-orient:horizontal;
-    -webkit-box-direction:normal;
-        -ms-flex-direction:row;
-            flex-direction:row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    width: 100% ;
-  }
-  .switch {
-    margin: 10px 0 0 0;
-    -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-            transform: scale(1);
-
-  }
-
-  .switch:hover {
-
-    -webkit-transform: scale(1);
-
-        -ms-transform: scale(1);
-
-            transform: scale(1);
-  }
+  /******************************* MENU *******************************/
 
   select {
-    width: 100%;
     padding: 15px 5px;
     margin: 0;
 
@@ -1008,16 +754,12 @@ flex-direction: column;
     padding: 15px 5px;
   }
 
-
   .top-one {
     padding: 20px 10px;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-            margin:0;
-            padding: 0 15px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0 15px;
   }
 
   .top-form {
@@ -1027,52 +769,80 @@ flex-direction: column;
   div .merge {
     width: 150px;
     margin: 15px 0 0 15px;
-
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: row;
+    align-items: center;
   }
 
   .btn {
     width: 100%;
   }
 
- 
+  /******************************* SLIDERS *******************************/
 
-  .output li {
-    height: 4em;
-    padding: 3px 10px;
-    display: -webkit-box;
-    display: -ms-flexbox;
+  .all-sliders {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .slider-description {
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    font-size: .7em;
-    font-weight: bold;
-
+    align-items: flex-start;
+    margin: 0 0 20px 0;
   }
 
-  .output li i {
-    font-size: 26px;
-
+  .all-sliders-tax {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
   }
+
+  .switch {
+    margin: 10px 0 0 0;
+    transform: scale(1);
+  }
+
+  .switch:hover {
+    transform: scale(1);
+  }
+
+  /******************************* TOOLTIP *******************************/
 
   .tooltip {
     display: none;
   }
+
   .tooltiptext {
-    display:none;
+    display: none;
   }
+
   .tooltip:hover .tooltiptext {
     display: none;
+  }
+
+  /******************************* OUTCOME *******************************/
+
+  .outcome-title {
+    height: 40px;
+    padding: 5px 0;
+    font-size: 15px;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .output li {
+    height: 3em;
+    padding: 3px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .output li i {
+    font-size: 26px;
   }
 
 }

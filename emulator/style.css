@@ -673,6 +673,7 @@ input[type="number"] {
   body {
     flex-direction: column;
     margin: 0;
+    width: 100vw
   }
 
   /******************************* MOBILE NAV   *******************************/

@@ -254,7 +254,7 @@ select {
 
 .tooltip i {
   display: inline-block;
-  font-size: 15px;
+  font-size: 15   px;
 }
 
 /******************************* TOOLTIPS  *******************************/
@@ -719,7 +719,6 @@ input {
 
   .side-cases {
     margin: 0 15px;
-    flex-basis: 200px;
     }
 
 

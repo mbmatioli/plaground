@@ -160,6 +160,7 @@ h2 {
 }
 
 .paying-title {
+  display: flex;
   padding: 10px;
   font-size: 14px;
   margin: 0;

@@ -16,158 +16,181 @@
 </head>
 
 <body>
-        <nav>
-                <h1><i class="fas fa-dice-d20"></i><br>playground</h1>
-        
-                <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i></a></li>
-                    <li><a href="tax.html"><i class="fas fa-coins"></i></a></li>
-                    <li><a href="team.html"><i class="fas fa-users"></i></a></li>
-                    <li><a href="contracts.html"><i class="fas fa-file-signature"></i></a></li>
-                </ul>
-        
-                <div id="myLinks">
-                    <a href="index.html">Home</a>
-                    <a href="tax.html">Tax</a>
-                    <a href="team.html">Team</a>
-                    <a href="contracts.html">Contracts</a>
-                </div>
-        
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                    <i class="fas fa-bars"></i>
-                </a>
-            </nav>
+    <nav>
+        <h1><i class="fas fa-dice-d20"></i><br>playground</h1>
 
-    <section class="side-cases">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+            <li><a href="team.html"><i class="far fa-window-maximize"></i></a></li>
+            <li><a href="contracts.html"><i class="fas fa-calculator"></i></a></li>
+            <li><a href="tax.html"><i class="fas fa-cog"></i></a></li>
+            <li><a href="https://learn.nexudus.com"><i class="fas fa-book"></i></a></li>
 
-        <div class="cases">
-            <h3>CASE 1</h3>
-            <p>Prices Include Tax:<span>Yes</span></p>
-            <p>Invoice Include Tax: <span>Yes</span></p>
-            <p>Displayed Prices Include Tax: <span>Yes</span></p>
-            <button class="btn" onclick="caseClickTax()">View</button>
+        </ul>
+
+        <div id="myLinks">
+            <a href="index.html">Home</a>
+            <a href="team.html">Operation</a>
+            <a href="contracts.html">Finance</a>
+            <a href="tax.html">Settings</a>
+            <a href="https://learn.nexudus.com">Knowledge Base</a>
         </div>
 
-        <div class="cases">
-            <h3>CASE 2</h3>
-            <p>Prices Include Tax:<span>No</span></p>
-            <p>Invoice Include Tax: <span>Yes</span></p>
-            <p>Displayed Prices Include Tax: <span>Yes</span></p>
-            <button class="btn" onclick="caseClickTwoTax()">View</button>
-        </div>
-    </section>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fas fa-bars"></i>
+        </a>
+    </nav>
+    <section class="body">
+        <section class="side-cases">
 
-    <section class="emulator">
+            <div class="cases">
+                <h3>CASE 1</h3>
+                <p>Prices Include Tax:<span>Yes</span></p>
+                <p>Invoice Include Tax: <span>Yes</span></p>
+                <p>Displayed Prices Include Tax: <span>Yes</span></p>
+                <button class="btn" onclick="caseClickTax()">View</button>
+            </div>
 
-        <form>
-            <h2 class="emulator-title">Emulator</h2>
+            <div class="cases">
+                <h3>CASE 2</h3>
+                <p>Prices Include Tax:<span>No</span></p>
+                <p>Invoice Include Tax: <span>Yes</span></p>
+                <p>Displayed Prices Include Tax: <span>Yes</span></p>
+                <button class="btn" onclick="caseClickTwoTax()">View</button>
+            </div>
+        </section>
 
-            <div class="top-tax">
+        <section class="emulator">
 
-                <div class="top-form-tax">
+            <form>
+                <h2 class="emulator-title">Emulator</h2>
+
+                <div class="top-tax">
+
+                    <div class="top-form-tax">
 
 
-                    <label class="number">
-                        <p class="paying-title">Price</p>
+                        <label class="number">
+                            <p class="paying-title">Price</p>
 
-                        <input class="field" id="plan-price" type="number" placeholder="250.00"
-                            onchange="billingFunction()">
-                    </label>
+                            <input class="field" id="plan-price" type="number" placeholder="250.00"
+                                onchange="billingFunction()">
+                        </label>
+                    </div>
+
+
+                    <p class="default">Default tax rate</p>
+
+                    <div class="top-form-tax">
+
+                        <label class="number">
+                            <input class="field" id="tax-rate" type="number" placeholder="21.00"
+                                onchange="billingFunction()">
+                            <h2 class="opposite-paying-title">%</h2>
+
+                        </label>
+                    </div>
+                    <div class="menu">
+
+
+                        <h2 class="emulator-title">Invoincing and Tax</h2>
+
+
+                        <div class="alert disabled" id="alert" role="alert">
+                        </div>
+
+                        <div class="all-sliders-tax">
+                            <div class="slider-description">
+                                <div class="description-info">
+                                    <p>Add tax to invoice
+                                        <div class="tooltip">
+                                            <i class="fas fa-info-circle"></i>
+                                            <span class="tooltiptext">Invoices will include tax, so long as a tax rate
+                                                has
+                                                been defined.</span>
+                                        </div>
+                                    </p>
+                                </div>
+
+                                <label class="switch">
+                                    <input type="checkbox" id="invoice-tax" onclick="billingFunction()">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="slider-description">
+                                <div class="description-info">
+                                    <p>Prices typed in the back-end include Tax <span>
+                                            <div class="tooltip">
+                                                <i class="fas fa-info-circle"></i>
+                                                <span class="tooltiptext">Enabling this option will mean prices typed in
+                                                    the
+                                                    admin panel are gross prices.</span>
+                                            </div>
+                                        </span></p>
+                                </div>
+
+                                <label class="switch">
+                                    <input type="checkbox" id="back-end" onclick="billingFunction()">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+
+                            <div class="slider-description">
+                                <div class="description-info">
+                                    <p>Sets if prices are displayed with tax in your website <span>
+                                            <div class="tooltip">
+                                                <i class="fas fa-info-circle"></i>
+                                                <span class="tooltiptext">>Enabling this option will mean prices typed
+                                                    in
+                                                    the members portal are gross prices.</span>
+                                            </div>
+                                        </span></p>
+                                </div>
+
+                                <label class="switch">
+                                    <input type="checkbox" id="display-tax" onclick="billingFunction()">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-
-                <p class="default">Default tax rate</p>
+            </form>
+            <form>
+                <h2 class="emulator-title">Setting</h2>
+                <p class="default">Product tax rate</p>
 
                 <div class="top-form-tax">
 
                     <label class="number">
                         <input class="field" id="tax-rate" type="number" placeholder="21.00"
                             onchange="billingFunction()">
-                        <h2 class="paying-title">%</h2>
+                        <h2 class="opposite-paying-title">%</h2>
 
                     </label>
                 </div>
-                <div class="menu">
+            </form>
+            <form>
+                <div class="output" id="output">
 
 
-                    <h2 class="emulator-title">Invoincing and Tax</h2>
-
-
-                    <div class="alert" id="alert" role="alert">
-                    </div>
-
-                    <div class="all-sliders-tax">
-                        <div class="slider-description">
-                            <div class="description-info">
-                                <p>Add tax to invoice
-                                    <div class="tooltip">
-                                        <i class="fas fa-info-circle"></i>
-                                        <span class="tooltiptext">Invoices will include tax, so long as a tax rate has
-                                            been defined.</span>
-                                    </div>
-                                </p>
-                            </div>
-
-                            <label class="switch">
-                                <input type="checkbox" id="invoice-tax" onclick="billingFunction()">
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
-
-                        <div class="slider-description">
-                            <div class="description-info">
-                                <p>Prices typed in the back-end include Tax <span>
-                                        <div class="tooltip">
-                                            <i class="fas fa-info-circle"></i>
-                                            <span class="tooltiptext">Enabling this option will mean prices typed in the
-                                                admin panel are gross prices.</span>
-                                        </div>
-                                    </span></p>
-                            </div>
-
-                            <label class="switch">
-                                <input type="checkbox" id="back-end" onclick="billingFunction()">
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
-
-
-                        <div class="slider-description">
-                            <div class="description-info">
-                                <p>Sets if prices are displayed with tax in your website <span>
-                                        <div class="tooltip">
-                                            <i class="fas fa-info-circle"></i>
-                                            <span class="tooltiptext">>Enabling this option will mean prices typed in
-                                                the members portal are gross prices.</span>
-                                        </div>
-                                    </span></p>
-                            </div>
-
-                            <label class="switch">
-                                <input type="checkbox" id="display-tax" onclick="billingFunction()">
-                                <span class="slider round"></span>
-                            </label>
+                    <div class="invoice">
+                        <h3 class="outcome-title">Invoice</h3>
+                        <div class="box"><i class="fas fa-file-invoice-dollar"></i><span
+                                id="invoice-output">$250.00</span>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <div class="website">
+                        <h3 class="outcome-title">Website</h3>
+                        <div class="box"><i class="fas fa-desktop"></i><span id="website-output">$250.00</span></div>
 
-            <div class="output" id="output">
-
-
-                <div class="invoice">
-                    <h3 class="outcome-title">Invoice</h3>
-                    <div class="box"><i class="fas fa-file-invoice-dollar"></i><span id="invoice-output">$250.00</span>
                     </div>
                 </div>
-                <div class="website">
-                    <h3 class="outcome-title">Website</h3>
-                    <div class="box"><i class="fas fa-desktop"></i><span id="website-output">$250.00</span></div>
 
-                </div>
-            </div>
-
-        </form>
+            </form>
+        </section>
     </section>
 </body>
 

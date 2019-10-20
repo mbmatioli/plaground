@@ -503,7 +503,5 @@ function contractOutcome () {
 
     document.getElementById("modal-content").innerHTML = 
     "<h2> Contract Summary </h2>" + 
-    "<p> " + memberName + "</p>" +
-    "<p>Will start on the " + startDate + "</p>" +
-    "<p>For " + planName + " the next invoice will be on the " + nextInvoice + " for the period starting on the " + invoicePeriod + " going forward all invoices will be raise on the " + billingDay + " of every month.</p>";
+    "<p> " + memberName + " will start on the " + startDate + " for " + planName + " the next invoice will be on the " + nextInvoice + " for the period starting on the " + invoicePeriod + " going forward all invoices will be raise on the " + billingDay + " of every month.</p>";
 };

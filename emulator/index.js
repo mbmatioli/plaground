@@ -469,6 +469,9 @@ function specificTax() {
     }
 }
 
+
+///////////////////////////////////////////// CONTRACT ///////////////////////////////////////////////////////
+
 function fixRate() {
     var fixPrice = document.getElementById("fix-price");
 
@@ -478,7 +481,6 @@ function fixRate() {
         document.getElementById("price").style.display = "none"
     }
 }
-
 
 function cancellation() {
     var cancelDate = document.getElementById("cancel-date");
@@ -490,9 +492,6 @@ function cancellation() {
     }
 }
 
-
-///////////////////////////////////////////// CONTRACT ///////////////////////////////////////////////////////
-
 function contractOutcome () {
   var memberName = document.querySelector("#customer").value;
   var planName = document.querySelector("#plan").value;
@@ -502,5 +501,9 @@ function contractOutcome () {
   var invoicePeriod = document.querySelector("#invoice-period").value;
 
 
-    document.getElementById("modal-content").innerHTML = "<h2> Contract Summary </h2>" + "<p> The " + memberName + " will start on the " + startDate + " for " + planName + " the next invoice will be on the " + nextInvoice + " for the period starting on the " + invoicePeriod + " going forward all invoices will be raise on the " + billingDay + " of every month.</p>";
+    document.getElementById("modal-content").innerHTML = 
+    "<h2> Contract Summary </h2>" + 
+    "<p> " + memberName + "</p>" +
+    "<p>Will start on the " + startDate + "</p>" +
+    "<p>For " + planName + " the next invoice will be on the " + nextInvoice + " for the period starting on the " + invoicePeriod + " going forward all invoices will be raise on the " + billingDay + " of every month.</p>";
 };

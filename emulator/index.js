@@ -1,3 +1,7 @@
+
+/////////////////////////////////// NAV /////////////////////////////////////
+
+
 function myFunction() {
     var x = document.getElementById("myLinks");
     if (x.style.display === "block") {
@@ -5,30 +9,235 @@ function myFunction() {
     } else {
         x.style.display = "block";
     }
-}
+};
 
-function teamAlert() {
+
+/////////////////////////////////// TEAM /////////////////////////////////////
+
+
+// var invoiceOutcomes = [
+//     "",
+//     "<i class='fas fa-check'></i> ONLY PM INVOICED",
+//     "<i class='fas fa-check'></i> INDIVIDUAL INVOICES"
+// ]
+
+// var combined = [
+//     "",
+//     "<i class='fas fa-check'></i> ALL BENEFITS IN ALL PLANS ARE POOLED",
+//     "<i class='fas fa-check'></i>"
+// ]
+
+// var individualMember = [
+//     "",
+//     "<i class='fas fa-check'></i> PM BENEFITS SHARED",
+//     "<i class='fas fa-check'></i> PM + OWN BENEFITS"
+// ]
+
+// var individualContact = [
+//     "",
+//     "NO PLAN TO RELEASE BENEFITS",
+//     "<i class='fas fa-check'></i> OWN BENEFITS"
+// ]
+
+// var alerts = [
+//     "<i class='fas fa-exclamation-triangle'></i> Please Note: Having 'Combine credits' disabled means only benefits give to the paying member will be shared with the team.",
+// ]
+
+var invoiceOutcomes = [
+    "",
+    "<i class='fas fa-check'></i> ONLY PM INVOICED",
+    "<i class='fas fa-check'></i> INDIVIDUAL INVOICES"
+]
+var combineOutcomes = [
+    "",
+    "NO SHARING",
+    "<i class='fas fa-check'></i> ALL BENEFITS IN ALL PLANS ARE POOLED",
+    "<i class='fas fa-check'></i> PM BENEFITS SHARED",
+    "NO PLAN TO RELEASE BENEFITS"
+
+]
+var benefitOutcomes = [
+    "",
+    "<i class='fas fa-check'></i> OWN BENEFITS",
+    "<i class='fas fa-check'></i> PM + OWN BENEFITS",
+    "<i class='fas fa-check'></i>",
+    "NOTHING TO SHARE"
+]
+var alerts = [
+    "<i class='fas fa-exclamation-triangle'></i> Please Note: Having 'Combine credits' disabled means only benefits give to the paying member will be shared with the team.",
+]
+
+
+function alert() {
+    var payingMember = document.getElementById("paying-member");
+
     var combineCredit = document.getElementById("combine-credit");
-
-    if (combineCredit.checked === false) {
-        document.getElementById("alert").style.display = "block"
-        document.getElementById("alert").innerHTML = "Please Note: Having 'Combine credits' disabled means only benefits give to the paying member will be shared with the team.";
+    var alertBox = document.getElementById("alert");
+    if (combineCredit.checked === false && payingMember.value !== "") {
+        alertBox.classList.remove("disabled")
+        alertBox.innerHTML = alerts[0];
     } else {
-        document.getElementById("alert").style.display = "none"
+        alertBox.classList.add("disabled")
     }
-}
+};
+
+// document.querySelectorAll("merge-invoice").addEventListener("change", teamBilling());
 
 function teamBilling() {
     var mergeInvoice = document.getElementById("merge-invoice");
     var payingMember = document.getElementById("paying-member");
 
-    if (payingMember.value != null) {
+    if (payingMember.value !== "") {
         if (mergeInvoice.checked === true) {
-            document.getElementById("everyone-one").innerHTML = "ONLY PM INVOICED" + "<i class='fas fa-file-invoice-dollar'></i>";
-            document.getElementById("individual-one").innerHTML = "";
+            document.getElementById("everyone").getElementsByTagName("li")[0].innerHTML = invoiceOutcomes[1];
+            document.getElementById("individual").getElementsByTagName("li")[0].innerHTML = invoiceOutcomes[0];
         } else {
-            document.getElementById("everyone-one").innerHTML = "";
-            document.getElementById("individual-one").innerHTML = "INDIVIDUAL INVOICES" + "<i class='fas fa-file-invoice-dollar'></i>";
+            document.getElementById("everyone").getElementsByTagName("li")[0].innerHTML = invoiceOutcomes[0];
+            document.getElementById("individual").getElementsByTagName("li")[0].innerHTML = invoiceOutcomes[2];
+        }
+    }
+
+};
+
+
+function teamFunction() {
+    var payingMember = document.getElementById("paying-member");
+    var combineCredit = document.getElementById("combine-credit");
+
+    if (payingMember.value === "member") {
+        if (combineCredit.checked === true) {
+            document.getElementById("everyone").getElementsByTagName("li")[1].innerHTML = combineOutcomes[2];
+            document.getElementById("individual").getElementsByTagName("li")[1].innerHTML = combineOutcomes[0];
+
+        } else if (combineCredit.checked === false) {
+            document.getElementById("everyone").getElementsByTagName("li")[1].innerHTML = combineOutcomes[0];
+            document.getElementById("individual").getElementsByTagName("li")[1].innerHTML = combineOutcomes[1];
+        }
+    } else if (payingMember.value === "contact") {
+        if (combineCredit.checked === true) {
+            document.getElementById("everyone").getElementsByTagName("li")[1].innerHTML = combineOutcomes[2];
+            document.getElementById("individual").getElementsByTagName("li")[1].innerHTML = combineOutcomes[0];
+
+        } else if (combineCredit.checked === false) {
+            document.getElementById("everyone").getElementsByTagName("li")[1].innerHTML = combineOutcomes[0];
+            document.getElementById("individual").getElementsByTagName("li")[1].innerHTML = combineOutcomes[0];
+
+        }
+    }
+
+};
+
+function accessPass() {
+    var payingMember = document.getElementById("paying-member");
+    var combineCredit = document.getElementById("combine-credit");
+    var accessPass = document.getElementById("access-pass");
+
+    if (payingMember.value === "member") {
+        if (combineCredit.checked === true && accessPass.checked === true) {
+            document.getElementById("everyone").getElementsByTagName("li")[2].innerHTML = benefitOutcomes[3];
+            document.getElementById("individual").getElementsByTagName("li")[2].innerHTML = benefitOutcomes[0];
+
+        } else if (combineCredit.checked === false && accessPass.checked === true) {
+            document.getElementById("everyone").getElementsByTagName("li")[2].innerHTML = benefitOutcomes[0];
+            document.getElementById("individual").getElementsByTagName("li")[2].innerHTML = benefitOutcomes[2];
+            document.getElementById("individual").getElementsByTagName("li")[1].innerHTML = combineOutcomes[2];
+
+        } else {
+            document.getElementById("everyone").getElementsByTagName("li")[2].innerHTML = benefitOutcomes[0];
+            document.getElementById("individual").getElementsByTagName("li")[2].innerHTML = benefitOutcomes[0];
+
+        }
+    } else if (payingMember.value === "contact") {
+        if (combineCredit.checked === true && accessPass.checked === true) {
+            document.getElementById("everyone").getElementsByTagName("li")[2].innerHTML = benefitOutcomes[3];
+            document.getElementById("individual").getElementsByTagName("li")[2].innerHTML = benefitOutcomes[0];
+
+        } else if (combineCredit.checked === false && accessPass.checked === true) {
+            document.getElementById("everyone").getElementsByTagName("li")[2].innerHTML = benefitOutcomes[0];
+            document.getElementById("individual").getElementsByTagName("li")[2].innerHTML = benefitOutcomes[4];
+            document.getElementById("individual").getElementsByTagName("li")[1].innerHTML = combineOutcomes[4];;
+
+        } else {
+            document.getElementById("everyone").getElementsByTagName("li")[2].innerHTML = benefitOutcomes[0];
+            document.getElementById("individual").getElementsByTagName("li")[2].innerHTML = benefitOutcomes[0];
+
+        }
+    }
+};
+
+function timeCredit() {
+    var payingMember = document.getElementById("paying-member");
+    var combineCredit = document.getElementById("combine-credit");
+    var timeCredit = document.getElementById("time-credit");
+
+    if (payingMember.value === "member") {
+        if (timeCredit.checked === true && combineCredit.checked === true) {
+            document.getElementById("everyone").getElementsByTagName("li")[3].innerHTML = benefitOutcomes[3];
+            document.getElementById("individual").getElementsByTagName("li")[3].innerHTML = benefitOutcomes[0];
+
+        } else if (combineCredit.checked === false && timeCredit.checked === true ) {
+            document.getElementById("everyone").getElementsByTagName("li")[3].innerHTML = benefitOutcomes[0];
+            document.getElementById("individual").getElementsByTagName("li")[3].innerHTML = benefitOutcomes[2];
+            document.getElementById("individual").getElementsByTagName("li")[1].innerHTML = combineOutcomes[3];
+
+        } else {
+            document.getElementById("everyone").getElementsByTagName("li")[3].innerHTML = benefitOutcomes[0];
+            document.getElementById("individual").getElementsByTagName("li")[3].innerHTML = benefitOutcomes[0];
+
+        }
+    } else if (payingMember.value === "contact") {
+        if (timeCredit.checked === true && combineCredit.checked === true) {
+            document.getElementById("everyone").getElementsByTagName("li")[3].innerHTML = benefitOutcomes[3];
+            document.getElementById("individual").getElementsByTagName("li")[3].innerHTML = benefitOutcomes[0];
+
+        } else if (timeCredit.checked === true && combineCredit.checked === false) {
+            document.getElementById("everyone").getElementsByTagName("li")[3].innerHTML = "";
+            document.getElementById("individual").getElementsByTagName("li")[3].innerHTML = benefitOutcomes[4];
+            document.getElementById("individual").getElementsByTagName("li")[1].innerHTML = combineOutcomes[4];
+
+
+        } else {
+            document.getElementById("everyone").getElementsByTagName("li")[3].innerHTML = benefitOutcomes[0];
+            document.getElementById("individual").getElementsByTagName("li")[3].innerHTML = benefitOutcomes[0];
+
+        }
+    }
+};
+
+function monetaryCredit() {
+    var payingMember = document.getElementById("paying-member");
+    var combineCredit = document.getElementById("combine-credit");
+    var monetaryCredit = document.getElementById("monetary-credit");
+
+    if (payingMember.value === "member") {
+        if (monetaryCredit.checked === true && combineCredit.checked === true) {
+            document.getElementById("everyone").getElementsByTagName("li")[4].innerHTML = benefitOutcomes[3];
+            document.getElementById("individual").getElementsByTagName("li")[4].innerHTML = benefitOutcomes[0];
+
+        } else if (monetaryCredit.checked === true && combineCredit.checked === false) {
+            document.getElementById("everyone").getElementsByTagName("li")[4].innerHTML = benefitOutcomes[0];
+            document.getElementById("individual").getElementsByTagName("li")[4].innerHTML = benefitOutcomes[2];
+            document.getElementById("individual").getElementsByTagName("li")[1].innerHTML = combineOutcomes[3]
+
+        } else {
+            document.getElementById("everyone").getElementsByTagName("li")[4].innerHTML = benefitOutcomes[0];
+            document.getElementById("individual").getElementsByTagName("li")[4].innerHTML = benefitOutcomes[0];
+
+        }
+    } else if (payingMember.value === "contact") {
+        if (monetaryCredit.checked === true && combineCredit.checked === true) {
+            document.getElementById("everyone").getElementsByTagName("li")[4].innerHTML = benefitOutcomes[3];
+            document.getElementById("individual").getElementsByTagName("li")[4].innerHTML = benefitOutcomes[0];
+
+        } else if (monetaryCredit.checked === true && combineCredit.checked === false) {
+            document.getElementById("everyone").getElementsByTagName("li")[4].innerHTML = "";
+            document.getElementById("individual").getElementsByTagName("li")[4].innerHTML = benefitOutcomes[4];
+            document.getElementById("individual").getElementsByTagName("li")[1].innerHTML = combineOutcomes[4];
+
+        } else {
+            document.getElementById("everyone").getElementsByTagName("li")[4].innerHTML = benefitOutcomes[0];
+            document.getElementById("individual").getElementsByTagName("li")[4].innerHTML = benefitOutcomes[0];
+
         }
     }
 };
@@ -40,7 +249,7 @@ function allTogether() {
     timeCredit();
     monetaryCredit();
     teamBilling();
-    teamAlert()
+    alert()
 };
 
 function caseClick() {
@@ -66,7 +275,7 @@ function caseClickTwo() {
     document.querySelector("#time-credit").checked = true;
     document.querySelector("#monetary-credit").checked = true;
     allTogether()
-    scrollWin() 
+    scrollWin()
 }
 
 function caseClickThree() {
@@ -82,174 +291,18 @@ function caseClickThree() {
     scrollWin()
 }
 
-function teamFunction() {
-    var payingMember = document.getElementById("paying-member");
-    var combineCredit = document.getElementById("combine-credit");
-    var accessPass = document.getElementById("access-pass");
-    var timeCredit = document.getElementById("time-credit");
-    var monetaryCredit = document.getElementById("monetary-credit");
-
-    if (payingMember.value != null && combineCredit.checked === false && accessPass.checked === false && timeCredit.checked === false && monetaryCredit.checked === false) {
-        document.getElementById('everyone-two').innerHTML = "";
-        document.getElementById('individual-two').innerHTML = "";
-        document.getElementById('individual-three').innerHTML = "OWN BENEFITS" + "<i class='fas fa-key'></i>";
-        document.getElementById('individual-four').innerHTML = "OWN BENEFITS" + "<i class='fas fa-hourglass-half'></i>";
-        document.getElementById('individual-five').innerHTML = "OWN BENEFITS" + "<i class='fas fa-dollar-sign'></i>";
-
-    } else if (payingMember.value === "member") {
-        if (combineCredit.checked === true) {
-            document.getElementById("everyone-two").innerHTML = "ALL BENEFITS IN ALL PLANS ARE POOLED" + "<i class='fas fa-check'></i>"
-            document.getElementById("individual-two").innerHTML = ""
-
-        } else if (combineCredit.checked === false) {
-            document.getElementById("everyone-two").innerHTML = ""
-            document.getElementById("individual-two").innerHTML = "PM BENEFITS SHARED" + "<i class='fas fa-check'></i>"
-
-        } else {
-            document.getElementById('everyone-two').innerHTML = ""
-            document.getElementById('individual-two').innerHTML = ""
-        }
-
-    } else if (payingMember.value === "contact") {
-
-        if (combineCredit.checked === true) {
-            document.getElementById("everyone-two").innerHTML = "ALL BENEFITS IN ALL PLANS ARE POOLED" + "<i class='fas fa-check'></i>"
-            document.getElementById("individual-two").innerHTML = ""
-
-        } else {
-            document.getElementById('everyone-two').innerHTML = "";
-            document.getElementById('individual-two').innerHTML = "";
-
-        }
-    }
-};
-
-function accessPass() {
-    var payingMember = document.getElementById("paying-member");
-    var combineCredit = document.getElementById("combine-credit");
-    var accessPass = document.getElementById("access-pass");
-
-    if (payingMember.value === "member") {
-        if (combineCredit.checked === true && accessPass.checked === true) {
-            document.getElementById('everyone-three').innerHTML = "<i class='fas fa-key'></i>";
-            document.getElementById('individual-three').innerHTML = "";
-
-        } else if (combineCredit.checked === false && accessPass.checked === true) {
-            document.getElementById('everyone-three').innerHTML = "";
-            document.getElementById('individual-three').innerHTML = "PM + OWN BENEFITS" + "<i class='fas fa-key'></i>";
-            document.getElementById("individual-two").innerHTML = "PM BENEFITS SHARED" + "<i class='fas fa-check'></i>"
-
-        } else {
-            document.getElementById('everyone-three').innerHTML = "";
-            document.getElementById('individual-three').innerHTML = "";
-
-        }
-    } else if (payingMember.value === "contact") {
-        if (combineCredit.checked === true && accessPass.checked === true) {
-            document.getElementById('everyone-three').innerHTML = "<i class='fas fa-key'></i>";
-            document.getElementById('individual-three').innerHTML = "";
-
-        } else if (combineCredit.checked === false && accessPass.checked === true) {
-            document.getElementById('everyone-three').innerHTML = "";
-            document.getElementById('individual-three').innerHTML = "NOTHING TO SHARE";
-            document.getElementById("individual-two").innerHTML = "NO PLAN TO RELEASE BENEFITS";
-
-        } else {
-            document.getElementById('everyone-three').innerHTML = "";
-            document.getElementById('individual-three').innerHTML = "";
-
-        }
-    }
-};
-
-function timeCredit() {
-    var payingMember = document.getElementById("paying-member");
-    var combineCredit = document.getElementById("combine-credit");
-    var timeCredit = document.getElementById("time-credit");
-
-    if (payingMember.value === "member") {
-        if (timeCredit.checked === true && combineCredit.checked === true) {
-            document.getElementById('everyone-four').innerHTML = "<i class='fas fa-hourglass-half'></i>";
-            document.getElementById('individual-four').innerHTML = "";
-
-        } else if (timeCredit.checked === true && combineCredit.checked === false) {
-            document.getElementById('everyone-four').innerHTML = "";
-            document.getElementById('individual-four').innerHTML = "PM + OWN BENEFITS" + "<i class='fas fa-hourglass-half'></i>";
-            document.getElementById("individual-two").innerHTML = "PM BENEFITS SHARED" + "<i class='fas fa-check'></i>"
-
-        } else {
-            document.getElementById('everyone-four').innerHTML = "";
-            document.getElementById('individual-four').innerHTML = "";
-
-        }
-    } else if (payingMember.value === "contact") {
-        if (timeCredit.checked === true && combineCredit.checked === true) {
-            document.getElementById('everyone-four').innerHTML = "<i class='fas fa-hourglass-half'></i>";
-            document.getElementById('individual-four').innerHTML = "";
-
-        } else if (timeCredit.checked === true && combineCredit.checked === false) {
-            document.getElementById('everyone-four').innerHTML = "";
-            document.getElementById('individual-four').innerHTML = "NOTHING TO SHARE";
-            document.getElementById("individual-two").innerHTML = "NO PLAN TO RELEASE BENEFITS";
-
-
-        } else {
-            document.getElementById('everyone-four').innerHTML = "";
-            document.getElementById('individual-four').innerHTML = "";
-
-        }
-    }
-};
-
-function monetaryCredit() {
-    var payingMember = document.getElementById("paying-member");
-    var combineCredit = document.getElementById("combine-credit");
-    var monetaryCredit = document.getElementById("monetary-credit");
-
-    if (payingMember.value === "member") {
-        if (monetaryCredit.checked === true && combineCredit.checked === true) {
-            document.getElementById('everyone-five').innerHTML = "<i class='fas fa-dollar-sign'></i>";
-            document.getElementById('individual-five').innerHTML = "";
-
-        } else if (monetaryCredit.checked === true && combineCredit.checked === false) {
-            document.getElementById('everyone-five').innerHTML = "";
-            document.getElementById('individual-five').innerHTML = "PM + OWN BENEFITS" + "<i class='fas fa-dollar-sign'></i>";
-            document.getElementById("individual-two").innerHTML = "PM BENEFITS SHARED" + "<i class='fas fa-check'></i>"
-
-        } else {
-            document.getElementById('everyone-five').innerHTML = "";
-            document.getElementById('individual-five').innerHTML = "";
-
-        }
-    } else if (payingMember.value === "contact") {
-        if (monetaryCredit.checked === true && combineCredit.checked === true) {
-            document.getElementById('everyone-five').innerHTML = "<i class='fas fa-dollar-sign'></i>";
-            document.getElementById('individual-five').innerHTML = "";
-
-        } else if (monetaryCredit.checked === true && combineCredit.checked === false) {
-            document.getElementById('everyone-five').innerHTML = "";
-            document.getElementById('individual-five').innerHTML = "NOTHING TO SHARE";
-            document.getElementById("individual-two").innerHTML = "NO PLAN TO RELEASE BENEFITS";
-
-        } else {
-            document.getElementById('everyone-five').innerHTML = "";
-            document.getElementById('individual-five').innerHTML = "";
-
-        }
-    }
-};
 /////////////////////////////////// TAX/////////////////////////////////////
 
 function caseClickTax() {
-    var input = document.querySelectorAll('input'),
-        i;
 
     document.querySelector("#plan-price").value = "250"
     document.querySelector("#tax-rate").value = "21"
-
-    for (i = 0; i < input.length; ++i) {
-        document.querySelectorAll("input")[i].checked = true;
-    }
+    document.querySelector("#invoice-tax").checked = true;
+    document.querySelector("#back-end").checked = true;
+    document.querySelector("#display-tax").checked = true;
+    document.querySelector("#specific-tax").checked = false;
+    document.querySelector("#specific-tax-rate").value = null;
+    document.getElementById("unique-tax").style.display = "none"
 
     billingFunction()
     scrollWin()
@@ -257,15 +310,12 @@ function caseClickTax() {
 };
 
 function scrollWin() {
-    window.scrollBy({ 
+    window.scrollBy({
         top: 2000,
-        left: 0, 
-        behavior: 'smooth' 
-      });
-
- 
-    };
-    
+        left: 0,
+        behavior: 'smooth'
+    });
+};
 
 function caseClickTwoTax() {
 
@@ -275,24 +325,43 @@ function caseClickTwoTax() {
     document.querySelector("#invoice-tax").checked = true;
     document.querySelector("#back-end").checked = false;
     document.querySelector("#display-tax").checked = true;
+    document.querySelector("#specific-tax").checked = false;
+    document.querySelector("#specific-tax-rate").value = null;
+
+    document.getElementById("unique-tax").style.display = "none"
 
     scrollWin()
-
-
     billingFunction()
+}
+
+function caseClickThreeTax() {
+
+    document.querySelector("#plan-price").value = "250"
+    document.querySelector("#tax-rate").value = "21"
+    document.querySelector("#specific-tax-rate").value = "10"
+
+    document.querySelector("#invoice-tax").checked = true;
+    document.querySelector("#back-end").checked = false;
+    document.querySelector("#display-tax").checked = true;
+    document.querySelector("#specific-tax").checked = true;
+
+
+    scrollWin()
+    billingFunction()
+    specificTax()
 }
 
 function billingFunction() {
 
     var originalPrice = document.getElementById("plan-price");
     var taxRate = document.getElementById("tax-rate");
-
-
+    var specificTaxRate = document.getElementById("specific-tax-rate")
     var invoiceTax = document.getElementById("invoice-tax");
     var backEnd = document.getElementById("back-end");
     var displayTax = document.getElementById("display-tax");
+    var specificTaxCheckbox = document.getElementById("specific-tax")
 
-    if (taxRate.value > 0) {
+    if (taxRate.value > 0 && specificTaxCheckbox.checked === false) {
 
         if (invoiceTax.checked === true && backEnd.checked === false && displayTax.checked === false) {
             document.getElementById("invoice-output").innerHTML = "$" + Number(originalPrice.value * 1 + originalPrice.value * (taxRate.value / 100)).toFixed(2);
@@ -333,7 +402,48 @@ function billingFunction() {
             document.getElementById("invoice-output").innerHTML = "$" + Number(originalPrice.value).toFixed(2);
             document.getElementById("website-output").innerHTML = "$" + Number(originalPrice.value).toFixed(2);
             taxAlert()
+        }
+    } else if (specificTaxCheckbox.checked === true) {
 
+        if (invoiceTax.checked === true && backEnd.checked === false && displayTax.checked === false) {
+            document.getElementById("invoice-output").innerHTML = "$" + Number(originalPrice.value * 1 + originalPrice.value * (specificTaxRate.value / 100)).toFixed(2);
+            document.getElementById("website-output").innerHTML = "$" + Number(originalPrice.value).toFixed(2);
+            taxAlert()
+
+
+        } else if (invoiceTax.checked === true && backEnd.checked === true && displayTax.checked === false) {
+            document.getElementById("invoice-output").innerHTML = "$" + Number(originalPrice.value).toFixed(2);
+            document.getElementById("website-output").innerHTML = "$" + Number(originalPrice.value - (originalPrice.value * (specificTaxRate.value / 100))).toFixed(2);
+            taxAlert()
+
+
+        } else if (invoiceTax.checked === true && backEnd.checked === false && displayTax.checked === true) {
+            document.getElementById("invoice-output").innerHTML = "$" + Number(originalPrice.value * 1 + originalPrice.value * (specificTaxRate.value / 100)).toFixed(2);
+            document.getElementById("website-output").innerHTML = "$" + Number(originalPrice.value * 1 + originalPrice.value * (specificTaxRate.value / 100)).toFixed(2);
+            taxAlert()
+
+
+
+        } else if (invoiceTax.checked === false && backEnd.checked === true && displayTax.checked === false) {
+            document.getElementById("invoice-output").innerHTML = "$" + Number(originalPrice.value).toFixed(2) + " NO TAX";
+            document.getElementById("website-output").innerHTML = "$" + Number(originalPrice.value - (originalPrice.value * (specificTaxRate.value / 100))).toFixed(2);
+            taxAlert()
+
+
+        } else if (invoiceTax.checked === false && backEnd.checked === true && displayTax.checked === true) {
+            document.getElementById("invoice-output").innerHTML = "$" + Number(originalPrice.value).toFixed(2) + " NO TAX";
+            document.getElementById("website-output").innerHTML = "$" + Number(originalPrice.value).toFixed(2);
+            taxAlert()
+
+        } else if (invoiceTax.checked === false && backEnd.checked === false && displayTax.checked === true) {
+            document.getElementById("invoice-output").innerHTML = "$" + Number(originalPrice.value).toFixed(2) + " NO TAX";
+            document.getElementById("website-output").innerHTML = "$" + Number(originalPrice.value).toFixed(2);
+            taxAlert()
+
+        } else {
+            document.getElementById("invoice-output").innerHTML = "$" + Number(originalPrice.value).toFixed(2);
+            document.getElementById("website-output").innerHTML = "$" + Number(originalPrice.value).toFixed(2);
+            taxAlert()
         }
     }
 }
@@ -343,12 +453,21 @@ function taxAlert() {
 
     if (invoiceTax.checked === false) {
         document.getElementById("alert").style.display = "block"
-        document.getElementById("alert").innerHTML = "Please Note: Having 'Add Tax to Invoice' disabled means sales will not be taxed.";
+        document.getElementById("alert").innerHTML = "<i class='fas fa-exclamation-triangle'></i> Please Note: Having 'Add Tax to Invoice' disabled means sales will not be taxed.";
     } else {
         document.getElementById("alert").style.display = "none"
     }
 }
 
+function specificTax() {
+    var specificTax = document.getElementById("specific-tax");
+
+    if (specificTax.checked === true) {
+        document.getElementById("unique-tax").style.display = "flex"
+    } else {
+        document.getElementById("unique-tax").style.display = "none"
+    }
+}
 
 function fixRate() {
     var fixPrice = document.getElementById("fix-price");
@@ -369,4 +488,15 @@ function cancellation() {
     } else {
         document.getElementById("cancel").style.display = "none"
     }
+}
+
+
+///////////////////////////////////////////// CONTRACT ///////////////////////////////////////////////////////
+
+function contractOutcome () {
+    
+  var dateControl = document.querySelector('#start-date');
+  if (dateControl.value !== null){
+    document.getElementById("modal-content").innerHTML = dateControl.value;
+} 
 }

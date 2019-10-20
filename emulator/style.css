@@ -117,7 +117,7 @@ nav ul li a i:hover {
   flex-direction: row; 
   flex-wrap: wrap;
   width: 93%; 
-  margin-top: 50px;
+  margin-top: 20px;
   margin-left: 80px;
   margin-right: 80px;
 }
@@ -141,35 +141,58 @@ border: 2px solid #f7f7f7;
   border: 2px solid black;
 }
 
+.example {
+display: flex;
+flex-direction: column;
+align-items: center;
+border-radius: 4px;
+background: linear-gradient(-159deg, #ffcb00, #ff9c00);
+padding: 10px;
+color: white;
+width: 300px;
 
-/******************************* CASES  *******************************/
+}
+
+.explanation span{
+align-self: center;
+margin-left: 15px;
+}
+
+.explanation {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cecece;
+  border-radius: 4px;
+  width: 60%;
+  padding: 10px;
+  background-color: white;
+  margin: 20px 0 10px 95px;
+}
+/******************************* CARD FLIP  *******************************/
 
 .side-cases {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  order: 1;
+  justify-content: space-between;  */
+  width: 25vw;
+  margin: 0 10px;
+
 }
 
 .cases {
-  background: white;
   color: rgb(88, 88, 88);
-  padding: 20px;
-  margin: 10px;
+  padding: 10px 15px;
   border-radius: 5px;
-  border: 1px solid #cecece;
-  flex-basis: 43%;
   display: flex;
   flex-direction: column; 
-  justify-content: space-between;
-}
-
-.cases:hover {
-  border-color: #ff9c00;
+  justify-content: space-evenly;
+  margin:10px 0 0 0;
+  border: 1px solid #cecece;
+  background-color:white;
 }
 
 .cases h3 {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-size: 25px;
 }
 
@@ -178,7 +201,7 @@ border: 2px solid #f7f7f7;
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 1px;
-  margin: 8px 0px;
+  margin: 5px 0px;
 }
 
 .cases p span {
@@ -189,6 +212,7 @@ border: 2px solid #f7f7f7;
   letter-spacing: normal;
 }
 
+
 .btn {
   margin: 10px 0 0 0;
   border-color: 1px solid #ff9c00;
@@ -198,6 +222,8 @@ border: 2px solid #f7f7f7;
   padding: 10px 24px;
   font-family: "open sans";
   color: white;
+  width: 100%;
+  text-decoration: none;
 }
 
 .btn:hover {
@@ -212,7 +238,14 @@ border: 2px solid #f7f7f7;
 .disabled {
   display: none;
 }
+
 /******************************* EMULATOR  *******************************/
+
+.emulator {
+  width: 60vw; 
+  margin: 0;
+
+}
 
 form {
   background-color: white;
@@ -308,18 +341,25 @@ select {
 /******************************* MENU  *******************************/
 
 .menu {
-  margin: 30px;
+  margin: 0 30px 15px 30px;
 }
 
 .alert {
   margin: 0 0 15px 0;
-  padding: 20px;
+  padding: 10px;
   width: auto;
-  color: rgb(198, 179, 0);
-  background-color: rgb(255, 247, 202);
-  border: 1px solid rgb(198, 179, 0);
+  background-color: #fffaf3;
+  color: #573a08;
+  box-shadow:
+  0 0 0 1px #c9ba9b inset, 
+  0 0 0 0 transparent;
   border-radius: 5px;
   text-shadow: none;
+}
+
+.alert i {
+  color: #b58105;
+  font-size: 15px;
 }
 
 .all-sliders {
@@ -472,19 +512,31 @@ input:checked+.slider:before {
 
 .output li {
   height: 3em;
-  padding: 0 30px;
+  padding: 0 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 1.1em;
   font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  text-align: right;
+}
+.everyone li {
+  display: flex;
+  justify-content: space-between;
+}
+.breakdown {
+  display:flex;
 }
 
 #options-breakdown li {
   text-align: left;
-  text-transform: uppercase;
+  justify-content: space-evenly;
 }
-
+#options-breakdown-two {
+  text-align: left;
+  justify-content: space-evenly;
+}
 i {
   align-self: center;
   font-size: 30px;
@@ -505,8 +557,8 @@ i {
   border-radius: 0 4px 0 0;
 
 }
-.shared-with ul li i {
-  margin: 0 auto;
+.shared-with ul li i, .individual ul li i {
+  margin: 0 5px;
 }
 
 /******************************************* TAX OUTCOME *************************************/
@@ -581,8 +633,20 @@ i {
   width: 250px;
 }
 
+.specific-tax-sliders {
+  display: flex;
+  flex-direction: column;
+}
+
 #plan-price {
   width: 75px;
+  margin: 0;
+  border: none;
+  padding: 0;
+  border-radius: 0 4px 4px 0;
+}
+#specific-tax-rate {
+  width: 50px;
   margin: 0;
   border: none;
   padding: 0;
@@ -771,7 +835,6 @@ input {
   }
   .body {
     flex-direction: column;
-
   }
 
   /******************************* MOBILE NAV   *******************************/
@@ -824,18 +887,17 @@ input {
   /******************************* MOBILE CASES *******************************/
   
   .side-cases {
-    margin: 0;
+    margin: 0 10px;
     order:0;
-    width: 100%;
+    width: 96vw;
     }
 
 
   /************************** MOBILE EMULATOR CASES  **************************/
 
   .emulator {
-    margin: 0px;
+    margin: 10px 0px;
     box-shadow: none;
-    outline: 1px solid white;
     width: 100%;
 
   }
@@ -986,3 +1048,55 @@ input {
   }
 
 }
+
+
+
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog > div {
+	width: 60vw;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 5px;
+  background: white;
+  border: 1px solid #cecece;
+
+}
+
+.close {
+	color: black;
+	line-height: 25px;
+	position: absolute;
+	right: 5px;
+	text-align: center;
+	top: 5px;
+	width: 24px;
+	text-decoration: none;
+}
+
+.close i {
+  font-size: 15px;
+}
+
+.close:hover { 
+  color:  #ff9c00; }

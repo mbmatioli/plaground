@@ -494,9 +494,13 @@ function cancellation() {
 ///////////////////////////////////////////// CONTRACT ///////////////////////////////////////////////////////
 
 function contractOutcome () {
-    
-  var dateControl = document.querySelector('#start-date');
-  if (dateControl.value !== null){
-    document.getElementById("modal-content").innerHTML = dateControl.value;
-} 
-}
+  var memberName = document.querySelector("#customer").value;
+  var planName = document.querySelector("#plan").value;
+  var startDate = document.querySelector('#start-date').value;
+  var billingDay = document.querySelector("#billing-day").value;
+  var nextInvoice = document.querySelector("#next-invoice").value;
+  var invoicePeriod = document.querySelector("#invoice-period").value;
+
+
+    document.getElementById("modal-content").innerHTML = "<h2> Contract Summary </h2>" + "<p> The " + memberName + " will start on the " + startDate + " for " + planName + " the next invoice will be on the " + nextInvoice + " for the period starting on the " + invoicePeriod + " going forward all invoices will be raise on the " + billingDay + " of every month.</p>";
+};

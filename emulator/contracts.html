@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff">
-    <title>Playground | Team Emulator</title>
+    <title>Playground | Contract Emulator</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
@@ -44,30 +44,32 @@
     <section class="body">
         <section class="side-cases">
 
-            <div class="cases">
+                <div class="cases">
+                    
                 <h3>CASE 1</h3>
                 <p>Paying Member: <span>John Doe</span></p>
                 <p>Single Invoice: <span>Paying member only</span></p>
                 <p>Benefits: <span>Pooled and shared with everyone</span></p>
                 <button class="btn" onclick="caseClick()">View</button>
-            </div>
+        </div>
 
-            <div class="cases">
+        <div class="cases">
+              
                 <h3>CASE 2</h3>
                 <p>Paying Member: <span>John Doe</span></p>
                 <p>Single Invoice: <span>Paying Member Only</span></p>
                 <p>Benefits: <span>Only Benefits given to PM are shared with everyone</span></p>
                 <button class="btn" onclick="caseClickTwo()">View</button>
-            </div>
-
+        </div>
             <div class="cases">
+                  
                 <h3>CASE 3</h3>
                 <p>Paying Member: <span>John Doe</span></p>
                 <p>Single Invoice: <span>Individual invoices</span></p>
                 <p>Benefits: <span>Pooled and shared with everyone</span></p>
                 <button class="btn" onclick="caseClickThree()">View</button>
-            </div>
-        </section>
+        </div>       
+     </section>
 
         <section class="emulator">
 
@@ -77,17 +79,17 @@
                 <div class="customer-form">
                     <label class="customer"></label>
                     <span class="paying-title"><i class="fas fa-user"></i>Customer</span>
-                    <select class="field" idname="customer" id="cusotmer" onchange="allTogether()">
+                    <select class="field"  id="customer">
                         <option class="option" value="" disabled selected>Select customer</option>
-                        <option class="option" value="member">Abigail Winterberry</option>
-                        <option class="option" value="contact">Jimminy Billy Bob</option>
+                        <option class="option" value="Abigail Winterberry">Abigail Winterberry</option>
+                        <option class="option" value="Jiminy Billy Bob">Jimminy Billy Bob</option>
                     </select>
                     </label>
                 </div>
                 <div class="customer-form">
                     <label class="customer"></label>
                     <span class="paying-title"><i class="fas fa-award"></i>Plan</span>
-                    <select class="field" idname="paying-member" id="plan" onchange="allTogether()">
+                    <select class="field" idname="plan" id="plan">
                         <option class="option" value="" disabled selected>Select plan</option>
                         <option class="option" value="member">Hot Desk Membership - $250</option>
                         <option class="option" value="contact">Dedicated Desk Membership - $400</option>
@@ -95,7 +97,8 @@
                     </select>
                     </label>
                 </div>
-
+                <div class="alert disabled" id="alert" role="alert">
+                </div>
                 <h2 class="emulator-title">Invoice period</h2>
                 <div class="alert disabled" id="alert" role="alert">
                     PLEASE NOTE: Without "enabling combine" all only the benefits given
@@ -119,15 +122,14 @@
                     <div class="plan-date">
                         <label class="date">
                             <p class="paying-title">Invoice Date</p>
-                            <input class="field-date" id="start-date" type="date">
+                            <input class="field-date" id="next-invoice" type="date">
                         </label>
                     </div>
 
                     <div class="plan-date">
                         <label class="date">
                             <p class="paying-title">Invoice Period</p>
-                            <input class="field-date" id="invoice-period" type="date" placeholder="dd/mm/yyy"
-                                onchange="billingFunction()">
+                            <input class="field-date" id="invoice-period" type="date" placeholder="dd/mm/yyy">
                         </label>
                     </div>
 
@@ -151,7 +153,7 @@
                             </div>
 
                             <label class="switch">
-                                <input type="checkbox" id="fix-price" onclick="fixRate()">
+                                <input type="checkbox" id="fix-price">
                                 <span class="slider round"></span>
                             </label>
                         </div>
@@ -164,8 +166,7 @@
                                 <label class="number">
                                     <p class="paying-title">Price</p>
 
-                                    <input class="field" id="plan-price" type="number" placeholder="250.00"
-                                        onchange="billingFunction()">
+                                    <input class="field" id="plan-price" type="number" placeholder="250.00">
                                 </label>
                             </div>
 
@@ -190,7 +191,7 @@
                                     </span></P>
                             </div>
                             <label class="switch">
-                                <input type="checkbox" id="access-pass" onclick="allTogether()">
+                                <input type="checkbox" id="access-pass">
                                 <span class="slider round"></span>
                             </label>
                         </div>
@@ -206,7 +207,7 @@
                                     </span></P>
                             </div>
                             <label class="switch">
-                                <input type="checkbox" id="time-credit" onclick="allTogether()">
+                                <input type="checkbox" id="time-credit">
                                 <span class="slider round"></span>
                             </label>
                         </div>
@@ -246,13 +247,23 @@
                                     <label class="date">
                                         <p class="paying-title">Cancellation Date</p>
                                         <input class="field-date" id="cancellation-date" type="date"
-                                            placeholder="dd/mm/yyy" onchange="billingFunction()">
+                                            placeholder="dd/mm/yyy">
                                     </label>
                                 </div>
                             </div>
                         </div>
 
                     </div>
+                    <a class="btn" href="#openModal" onclick="contractOutcome()">Save</a>
+
+<div id="openModal" class="modalDialog">
+	<div>
+		<a href="#close" title="Close" class="close"><i class="fas fa-times"></i></a>
+		<div id="modal-content"><h2></h2>
+		
+    </div>
+</div>
+</div>
                 </div>
 
                 <div class="output" id="output">
